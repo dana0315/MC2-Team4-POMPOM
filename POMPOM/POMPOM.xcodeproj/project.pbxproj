@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C04FCAF6284E24020040F790 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C04FCAF5284E24020040F790 /* GoogleService-Info.plist */; };
-		C04FCAF9284E2AE10040F790 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C04FCAF8284E2AE10040F790 /* FirebaseAuth */; };
-		C04FCAFB284E2AE10040F790 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C04FCAFA284E2AE10040F790 /* FirebaseDatabase */; };
-		C04FCAFD284E2AE10040F790 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C04FCAFC284E2AE10040F790 /* FirebaseDatabaseSwift */; };
 		C0A779C72849E1C50086810C /* POMPOMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A779C62849E1C50086810C /* POMPOMApp.swift */; };
 		C0A779C92849E1C50086810C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A779C82849E1C50086810C /* ContentView.swift */; };
 		C0A779CB2849E1C60086810C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A779CA2849E1C60086810C /* Assets.xcassets */; };
@@ -58,9 +55,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C04FCAFD284E2AE10040F790 /* FirebaseDatabaseSwift in Frameworks */,
-				C04FCAFB284E2AE10040F790 /* FirebaseDatabase in Frameworks */,
-				C04FCAF9284E2AE10040F790 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,9 +150,6 @@
 			);
 			name = POMPOM;
 			packageProductDependencies = (
-				C04FCAF8284E2AE10040F790 /* FirebaseAuth */,
-				C04FCAFA284E2AE10040F790 /* FirebaseDatabase */,
-				C04FCAFC284E2AE10040F790 /* FirebaseDatabaseSwift */,
 			);
 			productName = POMPOM;
 			productReference = C0A779C32849E1C50086810C /* POMPOM.app */;
@@ -233,7 +224,6 @@
 			);
 			mainGroup = C0A779BA2849E1C50086810C;
 			packageReferences = (
-				C04FCAF7284E2AE10040F790 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = C0A779C42849E1C50086810C /* Products */;
 			projectDirPath = "";
@@ -605,35 +595,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		C04FCAF7284E2AE10040F790 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		C04FCAF8284E2AE10040F790 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C04FCAF7284E2AE10040F790 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		C04FCAFA284E2AE10040F790 /* FirebaseDatabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C04FCAF7284E2AE10040F790 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabase;
-		};
-		C04FCAFC284E2AE10040F790 /* FirebaseDatabaseSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C04FCAF7284E2AE10040F790 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabaseSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C0A779D12849E1C60086810C /* Model.xcdatamodeld */ = {
