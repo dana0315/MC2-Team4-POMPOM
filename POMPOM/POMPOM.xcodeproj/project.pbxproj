@@ -10,6 +10,8 @@
 		13C68565826818C883BCD969 /* Pods_POMPOMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A233C9F7EE2F43C44A16412C /* Pods_POMPOMTests.framework */; };
 		575BF0DA7306934B5512BD95 /* Pods_POMPOM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73DDE9E9E18A3E669433BA19 /* Pods_POMPOM.framework */; };
 		C04FCAF6284E24020040F790 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C04FCAF5284E24020040F790 /* GoogleService-Info.plist */; };
+		C0754BA7284F1921005DBAFC /* DummyNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0754BA6284F1921005DBAFC /* DummyNetworkManager.swift */; };
+		C0754BAA284F1936005DBAFC /* DummyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0754BA9284F1936005DBAFC /* DummyViewModel.swift */; };
 		C0A779C72849E1C50086810C /* POMPOMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A779C62849E1C50086810C /* POMPOMApp.swift */; };
 		C0A779C92849E1C50086810C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A779C82849E1C50086810C /* ContentView.swift */; };
 		C0A779CB2849E1C60086810C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A779CA2849E1C60086810C /* Assets.xcassets */; };
@@ -48,6 +50,8 @@
 		A233C9F7EE2F43C44A16412C /* Pods_POMPOMTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POMPOMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D6499D492346083126C119 /* Pods-POMPOM-POMPOMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POMPOM-POMPOMUITests.debug.xcconfig"; path = "Target Support Files/Pods-POMPOM-POMPOMUITests/Pods-POMPOM-POMPOMUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C04FCAF5284E24020040F790 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C0754BA6284F1921005DBAFC /* DummyNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyNetworkManager.swift; sourceTree = "<group>"; };
+		C0754BA9284F1936005DBAFC /* DummyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewModel.swift; sourceTree = "<group>"; };
 		C0A779C32849E1C50086810C /* POMPOM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POMPOM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A779C62849E1C50086810C /* POMPOMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POMPOMApp.swift; sourceTree = "<group>"; };
 		C0A779C82849E1C50086810C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +118,49 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C04795C1284F15C10040646A /* System */ = {
+			isa = PBXGroup;
+			children = (
+				C0A779C62849E1C50086810C /* POMPOMApp.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		C04795C4284F15D20040646A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C0A779CD2849E1C60086810C /* Preview Assets.xcassets */,
+				C04FCAF5284E24020040F790 /* GoogleService-Info.plist */,
+				C0A779CA2849E1C60086810C /* Assets.xcassets */,
+				C0A779D12849E1C60086810C /* Model.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C04795C5284F15D20040646A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C0A779C82849E1C50086810C /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C04795C7284F15D20040646A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C0754BA6284F1921005DBAFC /* DummyNetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		C0754BA8284F192C005DBAFC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C0754BA9284F1936005DBAFC /* DummyViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		C0A779BA2849E1C50086810C = {
 			isa = PBXGroup;
 			children = (
@@ -139,23 +186,14 @@
 		C0A779C52849E1C50086810C /* POMPOM */ = {
 			isa = PBXGroup;
 			children = (
+				C0754BA8284F192C005DBAFC /* ViewModels */,
 				C0FF3531284E9FB6001B1129 /* POMPOM.entitlements */,
-				C04FCAF5284E24020040F790 /* GoogleService-Info.plist */,
-				C0A779C62849E1C50086810C /* POMPOMApp.swift */,
-				C0A779C82849E1C50086810C /* ContentView.swift */,
-				C0A779CA2849E1C60086810C /* Assets.xcassets */,
-				C0A779D12849E1C60086810C /* Model.xcdatamodeld */,
-				C0A779CC2849E1C60086810C /* Preview Content */,
+				C04795C1284F15C10040646A /* System */,
+				C04795C7284F15D20040646A /* Networking */,
+				C04795C4284F15D20040646A /* Resources */,
+				C04795C5284F15D20040646A /* Views */,
 			);
 			path = POMPOM;
-			sourceTree = "<group>";
-		};
-		C0A779CC2849E1C60086810C /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				C0A779CD2849E1C60086810C /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		C0A779DB2849E1C60086810C /* POMPOMTests */ = {
@@ -415,7 +453,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0A779C92849E1C50086810C /* ContentView.swift in Sources */,
+				C0754BA7284F1921005DBAFC /* DummyNetworkManager.swift in Sources */,
 				C0A779C72849E1C50086810C /* POMPOMApp.swift in Sources */,
+				C0754BAA284F1936005DBAFC /* DummyViewModel.swift in Sources */,
 				C0A779D32849E1C60086810C /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,7 +616,7 @@
 				CODE_SIGN_ENTITLEMENTS = POMPOM/POMPOM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"POMPOM/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"POMPOM/Resources\"";
 				DEVELOPMENT_TEAM = 4DC5UF7YA9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -586,6 +626,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -608,7 +649,7 @@
 				CODE_SIGN_ENTITLEMENTS = POMPOM/POMPOM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"POMPOM/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"POMPOM/Resources\"";
 				DEVELOPMENT_TEAM = 4DC5UF7YA9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -618,6 +659,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
