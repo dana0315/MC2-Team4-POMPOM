@@ -20,7 +20,7 @@
 		C0A779DD2849E1C60086810C /* POMPOMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A779DC2849E1C60086810C /* POMPOMTests.swift */; };
 		C0A779E72849E1C60086810C /* POMPOMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A779E62849E1C60086810C /* POMPOMUITests.swift */; };
 		C0A779E92849E1C60086810C /* POMPOMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A779E82849E1C60086810C /* POMPOMUITestsLaunchTests.swift */; };
-		C0ECD08F28503D8A0005EC08 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ECD08E28503D8A0005EC08 /* Secret.swift */; };
+		C0F90CB32850729E00CC2C0E /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F90CB22850729E00CC2C0E /* Secret.swift */; };
 		CD5064FE72AD933795FF0668 /* Pods_POMPOM_POMPOMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A3C5F2FE47AEF89866EEFA6 /* Pods_POMPOM_POMPOMUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +64,7 @@
 		C0A779E22849E1C60086810C /* POMPOMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POMPOMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A779E62849E1C60086810C /* POMPOMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POMPOMUITests.swift; sourceTree = "<group>"; };
 		C0A779E82849E1C60086810C /* POMPOMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POMPOMUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		C0ECD08E28503D8A0005EC08 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		C0F90CB22850729E00CC2C0E /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		C0FF3531284E9FB6001B1129 /* POMPOM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = POMPOM.entitlements; sourceTree = "<group>"; };
 		C350ECAB77A213FE32F7F534 /* Pods-POMPOMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POMPOMTests.release.xcconfig"; path = "Target Support Files/Pods-POMPOMTests/Pods-POMPOMTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -188,7 +188,7 @@
 		C0A779C52849E1C50086810C /* POMPOM */ = {
 			isa = PBXGroup;
 			children = (
-				C0ECD08D28503D790005EC08 /* Secrets */,
+				C0F90CB12850728F00CC2C0E /* Secrets */,
 				C0754BA8284F192C005DBAFC /* ViewModels */,
 				C0FF3531284E9FB6001B1129 /* POMPOM.entitlements */,
 				C04795C1284F15C10040646A /* System */,
@@ -216,10 +216,10 @@
 			path = POMPOMUITests;
 			sourceTree = "<group>";
 		};
-		C0ECD08D28503D790005EC08 /* Secrets */ = {
+		C0F90CB12850728F00CC2C0E /* Secrets */ = {
 			isa = PBXGroup;
 			children = (
-				C0ECD08E28503D8A0005EC08 /* Secret.swift */,
+				C0F90CB22850729E00CC2C0E /* Secret.swift */,
 			);
 			path = Secrets;
 			sourceTree = "<group>";
@@ -464,7 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0A779C92849E1C50086810C /* ContentView.swift in Sources */,
-				C0ECD08F28503D8A0005EC08 /* Secret.swift in Sources */,
+				C0F90CB32850729E00CC2C0E /* Secret.swift in Sources */,
 				C0754BA7284F1921005DBAFC /* DummyNetworkManager.swift in Sources */,
 				C0A779C72849E1C50086810C /* POMPOMApp.swift in Sources */,
 				C0754BAA284F1936005DBAFC /* DummyViewModel.swift in Sources */,
