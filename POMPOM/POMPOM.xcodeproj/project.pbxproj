@@ -25,6 +25,7 @@
 		C0A779E92849E1C60086810C /* POMPOMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A779E82849E1C60086810C /* POMPOMUITestsLaunchTests.swift */; };
 		C0F90CB32850729E00CC2C0E /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F90CB22850729E00CC2C0E /* Secret.swift */; };
 		CD5064FE72AD933795FF0668 /* Pods_POMPOM_POMPOMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A3C5F2FE47AEF89866EEFA6 /* Pods_POMPOM_POMPOMUITests.framework */; };
+		D4DBDE522850864A0088E79C /* FelixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DBDE512850864A0088E79C /* FelixView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		C0F90CB22850729E00CC2C0E /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		C0FF3531284E9FB6001B1129 /* POMPOM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = POMPOM.entitlements; sourceTree = "<group>"; };
 		C350ECAB77A213FE32F7F534 /* Pods-POMPOMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-POMPOMTests.release.xcconfig"; sourceTree = "<group>"; };
+		D4DBDE512850864A0088E79C /* FelixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FelixView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,12 +151,10 @@
 			isa = PBXGroup;
 			children = (
 				C0A779C82849E1C50086810C /* ContentView.swift */,
-
 				25D64E28285082E400B7041E /* TimoView.swift */,
-
 				8A31D92328506E3B00C2ACA0 /* DanaView.swift */,
 				AB3270BC285084540054F6CD /* GunView.swift */,
-
+				D4DBDE512850864A0088E79C /* FelixView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -478,6 +478,7 @@
 				25D64E29285082E400B7041E /* TimoView.swift in Sources */,
 				C0A779C92849E1C50086810C /* ContentView.swift in Sources */,
 				8A31D92428506E3B00C2ACA0 /* DanaView.swift in Sources */,
+				D4DBDE522850864A0088E79C /* FelixView.swift in Sources */,
 				C0F90CB32850729E00CC2C0E /* Secret.swift in Sources */,
 				C0754BA7284F1921005DBAFC /* DummyNetworkManager.swift in Sources */,
 				C0A779C72849E1C50086810C /* POMPOMApp.swift in Sources */,
