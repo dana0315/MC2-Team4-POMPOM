@@ -12,6 +12,7 @@
 		575BF0DA7306934B5512BD95 /* Pods_POMPOM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73DDE9E9E18A3E669433BA19 /* Pods_POMPOM.framework */; };
 		8A31D92428506E3B00C2ACA0 /* DanaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A31D92328506E3B00C2ACA0 /* DanaView.swift */; };
 		AB3270BD285084540054F6CD /* GunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3270BC285084540054F6CD /* GunView.swift */; };
+		C01B4ED0285086FB00F52008 /* LukeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01B4ECF285086FB00F52008 /* LukeView.swift */; };
 		C04FCAF6284E24020040F790 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C04FCAF5284E24020040F790 /* GoogleService-Info.plist */; };
 		C0754BA7284F1921005DBAFC /* DummyNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0754BA6284F1921005DBAFC /* DummyNetworkManager.swift */; };
 		C0754BAA284F1936005DBAFC /* DummyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0754BA9284F1936005DBAFC /* DummyViewModel.swift */; };
@@ -56,6 +57,7 @@
 		A233C9F7EE2F43C44A16412C /* Pods_POMPOMTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POMPOMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB3270BC285084540054F6CD /* GunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GunView.swift; sourceTree = "<group>"; };
 		B4D6499D492346083126C119 /* Pods-POMPOM-POMPOMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POMPOM-POMPOMUITests.debug.xcconfig"; path = "Target Support Files/Pods-POMPOM-POMPOMUITests/Pods-POMPOM-POMPOMUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C01B4ECF285086FB00F52008 /* LukeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LukeView.swift; sourceTree = "<group>"; };
 		C04FCAF5284E24020040F790 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C0754BA6284F1921005DBAFC /* DummyNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyNetworkManager.swift; sourceTree = "<group>"; };
 		C0754BA9284F1936005DBAFC /* DummyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewModel.swift; sourceTree = "<group>"; };
@@ -149,12 +151,10 @@
 			isa = PBXGroup;
 			children = (
 				C0A779C82849E1C50086810C /* ContentView.swift */,
-
 				25D64E28285082E400B7041E /* TimoView.swift */,
-
 				8A31D92328506E3B00C2ACA0 /* DanaView.swift */,
 				AB3270BC285084540054F6CD /* GunView.swift */,
-
+				C01B4ECF285086FB00F52008 /* LukeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -482,6 +482,7 @@
 				C0754BA7284F1921005DBAFC /* DummyNetworkManager.swift in Sources */,
 				C0A779C72849E1C50086810C /* POMPOMApp.swift in Sources */,
 				AB3270BD285084540054F6CD /* GunView.swift in Sources */,
+				C01B4ED0285086FB00F52008 /* LukeView.swift in Sources */,
 				C0754BAA284F1936005DBAFC /* DummyViewModel.swift in Sources */,
 				C0A779D32849E1C60086810C /* Model.xcdatamodeld in Sources */,
 			);
