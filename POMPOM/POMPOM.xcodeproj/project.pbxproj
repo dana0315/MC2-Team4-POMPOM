@@ -10,6 +10,7 @@
 		13C68565826818C883BCD969 /* Pods_POMPOMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A233C9F7EE2F43C44A16412C /* Pods_POMPOMTests.framework */; };
 		575BF0DA7306934B5512BD95 /* Pods_POMPOM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73DDE9E9E18A3E669433BA19 /* Pods_POMPOM.framework */; };
 		C04FCAF6284E24020040F790 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C04FCAF5284E24020040F790 /* GoogleService-Info.plist */; };
+		C06611BC28507CE400AE4F07 /* DummyUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06611BB28507CE400AE4F07 /* DummyUIView.swift */; };
 		C0754BA7284F1921005DBAFC /* DummyNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0754BA6284F1921005DBAFC /* DummyNetworkManager.swift */; };
 		C0754BAA284F1936005DBAFC /* DummyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0754BA9284F1936005DBAFC /* DummyViewModel.swift */; };
 		C0A779C72849E1C50086810C /* POMPOMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A779C62849E1C50086810C /* POMPOMApp.swift */; };
@@ -51,6 +52,7 @@
 		A233C9F7EE2F43C44A16412C /* Pods_POMPOMTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POMPOMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D6499D492346083126C119 /* Pods-POMPOM-POMPOMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POMPOM-POMPOMUITests.debug.xcconfig"; path = "Target Support Files/Pods-POMPOM-POMPOMUITests/Pods-POMPOM-POMPOMUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C04FCAF5284E24020040F790 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C06611BB28507CE400AE4F07 /* DummyUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyUIView.swift; sourceTree = "<group>"; };
 		C0754BA6284F1921005DBAFC /* DummyNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyNetworkManager.swift; sourceTree = "<group>"; };
 		C0754BA9284F1936005DBAFC /* DummyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewModel.swift; sourceTree = "<group>"; };
 		C0A779C32849E1C50086810C /* POMPOM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POMPOM.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +144,7 @@
 		C04795C5284F15D20040646A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C06611BA28507CBA00AE4F07 /* Components */,
 				C0A779C82849E1C50086810C /* ContentView.swift */,
 			);
 			path = Views;
@@ -153,6 +156,14 @@
 				C0754BA6284F1921005DBAFC /* DummyNetworkManager.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		C06611BA28507CBA00AE4F07 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C06611BB28507CE400AE4F07 /* DummyUIView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		C0754BA8284F192C005DBAFC /* ViewModels */ = {
@@ -189,12 +200,12 @@
 			isa = PBXGroup;
 			children = (
 				C0F90CB12850728F00CC2C0E /* Secrets */,
-				C0754BA8284F192C005DBAFC /* ViewModels */,
 				C0FF3531284E9FB6001B1129 /* POMPOM.entitlements */,
 				C04795C1284F15C10040646A /* System */,
 				C04795C7284F15D20040646A /* Networking */,
 				C04795C4284F15D20040646A /* Resources */,
 				C04795C5284F15D20040646A /* Views */,
+				C0754BA8284F192C005DBAFC /* ViewModels */,
 			);
 			path = POMPOM;
 			sourceTree = "<group>";
@@ -467,6 +478,7 @@
 				C0F90CB32850729E00CC2C0E /* Secret.swift in Sources */,
 				C0754BA7284F1921005DBAFC /* DummyNetworkManager.swift in Sources */,
 				C0A779C72849E1C50086810C /* POMPOMApp.swift in Sources */,
+				C06611BC28507CE400AE4F07 /* DummyUIView.swift in Sources */,
 				C0754BAA284F1936005DBAFC /* DummyViewModel.swift in Sources */,
 				C0A779D32849E1C60086810C /* Model.xcdatamodeld in Sources */,
 			);
