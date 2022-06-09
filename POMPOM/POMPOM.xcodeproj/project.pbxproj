@@ -8,18 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		13C68565826818C883BCD969 /* Pods_POMPOMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A233C9F7EE2F43C44A16412C /* Pods_POMPOMTests.framework */; };
-		25D64E29285082E400B7041E /* TimoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D64E28285082E400B7041E /* TimoView.swift */; };
 		575BF0DA7306934B5512BD95 /* Pods_POMPOM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73DDE9E9E18A3E669433BA19 /* Pods_POMPOM.framework */; };
-		8A31D92428506E3B00C2ACA0 /* DanaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A31D92328506E3B00C2ACA0 /* DanaView.swift */; };
-
-		AED4F0C9285085B50025F723 /* JeniView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED4F0C8285085B50025F723 /* JeniView2.swift */; };
-
-		AB3270BD285084540054F6CD /* GunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3270BC285084540054F6CD /* GunView.swift */; };
-		C01B4ED0285086FB00F52008 /* LukeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01B4ECF285086FB00F52008 /* LukeView.swift */; };
-
 		C04FCAF6284E24020040F790 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C04FCAF5284E24020040F790 /* GoogleService-Info.plist */; };
+		C06CE14B2851DC0900BBDA68 /* CoupleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE14A2851DC0900BBDA68 /* CoupleView.swift */; };
+		C06CE14E2851DC5100BBDA68 /* CodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE14D2851DC5100BBDA68 /* CodeInputView.swift */; };
+		C06CE1502851DC5C00BBDA68 /* CodeOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE14F2851DC5C00BBDA68 /* CodeOutputView.swift */; };
+		C06CE1532851DC7F00BBDA68 /* CoupleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE1522851DC7F00BBDA68 /* CoupleViewModel.swift */; };
+		C06CE1552851DCA100BBDA68 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE1542851DCA100BBDA68 /* LoginManager.swift */; };
+		C06CE1572851DCB100BBDA68 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE1562851DCB100BBDA68 /* FirebaseManager.swift */; };
+		C06CE1592851DCD600BBDA68 /* CodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE1582851DCD600BBDA68 /* CodeViewModel.swift */; };
+		C06CE15B2851DCFE00BBDA68 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE15A2851DCFE00BBDA68 /* ConnectionManager.swift */; };
+		C06CE15E2851DD4800BBDA68 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE15D2851DD4800BBDA68 /* OnboardingView.swift */; };
+		C06CE1602851DD6700BBDA68 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE15F2851DD6700BBDA68 /* NotificationManager.swift */; };
+		C06CE1632851DD8500BBDA68 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE1622851DD8500BBDA68 /* LoginView.swift */; };
+		C06CE1652851DDAB00BBDA68 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE1642851DDAB00BBDA68 /* LoginViewModel.swift */; };
 		C0754BA7284F1921005DBAFC /* DummyNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0754BA6284F1921005DBAFC /* DummyNetworkManager.swift */; };
-		C0754BAA284F1936005DBAFC /* DummyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0754BA9284F1936005DBAFC /* DummyViewModel.swift */; };
 		C0A779C72849E1C50086810C /* POMPOMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A779C62849E1C50086810C /* POMPOMApp.swift */; };
 		C0A779C92849E1C50086810C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A779C82849E1C50086810C /* ContentView.swift */; };
 		C0A779CB2849E1C60086810C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A779CA2849E1C60086810C /* Assets.xcassets */; };
@@ -30,7 +33,6 @@
 		C0A779E92849E1C60086810C /* POMPOMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A779E82849E1C60086810C /* POMPOMUITestsLaunchTests.swift */; };
 		C0F90CB32850729E00CC2C0E /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F90CB22850729E00CC2C0E /* Secret.swift */; };
 		CD5064FE72AD933795FF0668 /* Pods_POMPOM_POMPOMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A3C5F2FE47AEF89866EEFA6 /* Pods_POMPOM_POMPOMUITests.framework */; };
-		D4DBDE522850864A0088E79C /* FelixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DBDE512850864A0088E79C /* FelixView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,24 +54,27 @@
 
 /* Begin PBXFileReference section */
 		02339F4AD4C3D1D8C2D03564 /* Pods-POMPOM-POMPOMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POMPOM-POMPOMUITests.release.xcconfig"; path = "Target Support Files/Pods-POMPOM-POMPOMUITests/Pods-POMPOM-POMPOMUITests.release.xcconfig"; sourceTree = "<group>"; };
-		25D64E28285082E400B7041E /* TimoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimoView.swift; sourceTree = "<group>"; };
 		6A3C5F2FE47AEF89866EEFA6 /* Pods_POMPOM_POMPOMUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POMPOM_POMPOMUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73DDE9E9E18A3E669433BA19 /* Pods_POMPOM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POMPOM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7726019BE8B2B147179CFA25 /* Pods-POMPOM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POMPOM.release.xcconfig"; path = "Target Support Files/Pods-POMPOM/Pods-POMPOM.release.xcconfig"; sourceTree = "<group>"; };
 		893FA964D491FDFD16ACC4FD /* Pods-POMPOM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POMPOM.debug.xcconfig"; path = "Target Support Files/Pods-POMPOM/Pods-POMPOM.debug.xcconfig"; sourceTree = "<group>"; };
-		8A31D92328506E3B00C2ACA0 /* DanaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanaView.swift; sourceTree = "<group>"; };
 		9FDC8B0E53B5AF6CF8AA4472 /* Pods-POMPOMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POMPOMTests.debug.xcconfig"; path = "Target Support Files/Pods-POMPOMTests/Pods-POMPOMTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A233C9F7EE2F43C44A16412C /* Pods_POMPOMTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POMPOMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-
-		AED4F0C8285085B50025F723 /* JeniView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeniView2.swift; sourceTree = "<group>"; };
-
-		AB3270BC285084540054F6CD /* GunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GunView.swift; sourceTree = "<group>"; };
-
 		B4D6499D492346083126C119 /* Pods-POMPOM-POMPOMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POMPOM-POMPOMUITests.debug.xcconfig"; path = "Target Support Files/Pods-POMPOM-POMPOMUITests/Pods-POMPOM-POMPOMUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		C01B4ECF285086FB00F52008 /* LukeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LukeView.swift; sourceTree = "<group>"; };
 		C04FCAF5284E24020040F790 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C06CE14A2851DC0900BBDA68 /* CoupleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleView.swift; sourceTree = "<group>"; };
+		C06CE14D2851DC5100BBDA68 /* CodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputView.swift; sourceTree = "<group>"; };
+		C06CE14F2851DC5C00BBDA68 /* CodeOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeOutputView.swift; sourceTree = "<group>"; };
+		C06CE1522851DC7F00BBDA68 /* CoupleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleViewModel.swift; sourceTree = "<group>"; };
+		C06CE1542851DCA100BBDA68 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		C06CE1562851DCB100BBDA68 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		C06CE1582851DCD600BBDA68 /* CodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewModel.swift; sourceTree = "<group>"; };
+		C06CE15A2851DCFE00BBDA68 /* ConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
+		C06CE15D2851DD4800BBDA68 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		C06CE15F2851DD6700BBDA68 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		C06CE1622851DD8500BBDA68 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C06CE1642851DDAB00BBDA68 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C0754BA6284F1921005DBAFC /* DummyNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyNetworkManager.swift; sourceTree = "<group>"; };
-		C0754BA9284F1936005DBAFC /* DummyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewModel.swift; sourceTree = "<group>"; };
 		C0A779C32849E1C50086810C /* POMPOM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POMPOM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A779C62849E1C50086810C /* POMPOMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POMPOMApp.swift; sourceTree = "<group>"; };
 		C0A779C82849E1C50086810C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,7 +89,6 @@
 		C0F90CB22850729E00CC2C0E /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		C0FF3531284E9FB6001B1129 /* POMPOM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = POMPOM.entitlements; sourceTree = "<group>"; };
 		C350ECAB77A213FE32F7F534 /* Pods-POMPOMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-POMPOMTests.release.xcconfig"; sourceTree = "<group>"; };
-		D4DBDE512850864A0088E79C /* FelixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FelixView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,40 +161,64 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		C04795C5284F15D20040646A /* Views */ = {
+		C04795C5284F15D20040646A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				C06CE1612851DD7700BBDA68 /* LoginView */,
+				C06CE15C2851DD1C00BBDA68 /* Onboarding */,
+				C06CE14C2851DC2600BBDA68 /* CoupleView */,
 				C0A779C82849E1C50086810C /* ContentView.swift */,
-				25D64E28285082E400B7041E /* TimoView.swift */,
-				8A31D92328506E3B00C2ACA0 /* DanaView.swift */,
-
-				AED4F0C8285085B50025F723 /* JeniView2.swift */,
-
-				AB3270BC285084540054F6CD /* GunView.swift */,
-
-				D4DBDE512850864A0088E79C /* FelixView.swift */,
-
-				C01B4ECF285086FB00F52008 /* LukeView.swift */,
-
-
 			);
-			path = Views;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		C04795C7284F15D20040646A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				C0754BA6284F1921005DBAFC /* DummyNetworkManager.swift */,
+				C06CE1542851DCA100BBDA68 /* LoginManager.swift */,
+				C06CE1562851DCB100BBDA68 /* FirebaseManager.swift */,
+				C06CE15A2851DCFE00BBDA68 /* ConnectionManager.swift */,
+				C06CE15F2851DD6700BBDA68 /* NotificationManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		C0754BA8284F192C005DBAFC /* ViewModels */ = {
+		C06CE14C2851DC2600BBDA68 /* CoupleView */ = {
 			isa = PBXGroup;
 			children = (
-				C0754BA9284F1936005DBAFC /* DummyViewModel.swift */,
+				C06CE1512851DC6300BBDA68 /* ViewModel */,
+				C06CE14A2851DC0900BBDA68 /* CoupleView.swift */,
+				C06CE14D2851DC5100BBDA68 /* CodeInputView.swift */,
+				C06CE14F2851DC5C00BBDA68 /* CodeOutputView.swift */,
 			);
-			path = ViewModels;
+			path = CoupleView;
+			sourceTree = "<group>";
+		};
+		C06CE1512851DC6300BBDA68 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C06CE1522851DC7F00BBDA68 /* CoupleViewModel.swift */,
+				C06CE1582851DCD600BBDA68 /* CodeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C06CE15C2851DD1C00BBDA68 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				C06CE15D2851DD4800BBDA68 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		C06CE1612851DD7700BBDA68 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				C06CE1622851DD8500BBDA68 /* LoginView.swift */,
+				C06CE1642851DDAB00BBDA68 /* LoginViewModel.swift */,
+			);
+			path = LoginView;
 			sourceTree = "<group>";
 		};
 		C0A779BA2849E1C50086810C = {
@@ -219,12 +247,11 @@
 			isa = PBXGroup;
 			children = (
 				C0F90CB12850728F00CC2C0E /* Secrets */,
-				C0754BA8284F192C005DBAFC /* ViewModels */,
 				C0FF3531284E9FB6001B1129 /* POMPOM.entitlements */,
 				C04795C1284F15C10040646A /* System */,
 				C04795C7284F15D20040646A /* Networking */,
 				C04795C4284F15D20040646A /* Resources */,
-				C04795C5284F15D20040646A /* Views */,
+				C04795C5284F15D20040646A /* UI */,
 			);
 			path = POMPOM;
 			sourceTree = "<group>";
@@ -493,24 +520,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25D64E29285082E400B7041E /* TimoView.swift in Sources */,
 				C0A779C92849E1C50086810C /* ContentView.swift in Sources */,
-				8A31D92428506E3B00C2ACA0 /* DanaView.swift in Sources */,
-
+				C06CE1532851DC7F00BBDA68 /* CoupleViewModel.swift in Sources */,
 				C0F90CB32850729E00CC2C0E /* Secret.swift in Sources */,
+				C06CE15E2851DD4800BBDA68 /* OnboardingView.swift in Sources */,
+				C06CE14B2851DC0900BBDA68 /* CoupleView.swift in Sources */,
 				C0754BA7284F1921005DBAFC /* DummyNetworkManager.swift in Sources */,
+				C06CE1592851DCD600BBDA68 /* CodeViewModel.swift in Sources */,
 				C0A779C72849E1C50086810C /* POMPOMApp.swift in Sources */,
-				AED4F0C9285085B50025F723 /* JeniView2.swift in Sources */,
-
-				D4DBDE522850864A0088E79C /* FelixView.swift in Sources */,
 				C0F90CB32850729E00CC2C0E /* Secret.swift in Sources */,
+				C06CE1502851DC5C00BBDA68 /* CodeOutputView.swift in Sources */,
+				C06CE14E2851DC5100BBDA68 /* CodeInputView.swift in Sources */,
+				C06CE1552851DCA100BBDA68 /* LoginManager.swift in Sources */,
 				C0754BA7284F1921005DBAFC /* DummyNetworkManager.swift in Sources */,
+				C06CE15B2851DCFE00BBDA68 /* ConnectionManager.swift in Sources */,
 				C0A779C72849E1C50086810C /* POMPOMApp.swift in Sources */,
-				AB3270BD285084540054F6CD /* GunView.swift in Sources */,
-				C01B4ED0285086FB00F52008 /* LukeView.swift in Sources */,
-
-				C0754BAA284F1936005DBAFC /* DummyViewModel.swift in Sources */,
+				C06CE1602851DD6700BBDA68 /* NotificationManager.swift in Sources */,
+				C06CE1572851DCB100BBDA68 /* FirebaseManager.swift in Sources */,
+				C06CE1632851DD8500BBDA68 /* LoginView.swift in Sources */,
 				C0A779D32849E1C60086810C /* Model.xcdatamodeld in Sources */,
+				C06CE1652851DDAB00BBDA68 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
