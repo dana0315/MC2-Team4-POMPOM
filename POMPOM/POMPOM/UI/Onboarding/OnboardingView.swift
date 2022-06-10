@@ -42,10 +42,13 @@ struct FirstOnboardingView: View {
                 .multilineTextAlignment(.center)
                 .lineSpacing(6)
             Spacer()
-                .frame(height: 75)
-            // "물음표 곰돌이" 자리
-            Rectangle()
-                .frame(width: 350, height: 350)
+                .frame(height: 80)
+            HStack {
+                Spacer()
+                    .frame(width: 110)
+                Image("CuriousBear")
+                Spacer()
+            }
             Spacer()
          }
      }
