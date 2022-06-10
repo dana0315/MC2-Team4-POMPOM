@@ -12,17 +12,17 @@ struct OnboardingView: View {
         VStack {
             Spacer()
                 .frame(height: 84)
-            Text("내일 뭐 입고 올꺼야?")
+            Text("코디 너로 결정!")
                 .font(.system(size: 30))
                 .bold()
                 .frame(height: 14)
                 .padding()
-            Text("커플 인생샷을 남기고 싶은데\n상대방이 무엇이 입고올지 고민인가요?")
+            Text("내 옷장에 색상을 넣고\n같이 컬러 조합을 맞춰봐요")
                 .font(.system(size: 17))
                 .multilineTextAlignment(.center)
             Spacer()
                 .frame(height: 75)
-            // "물음표 곰돌이" 자리
+            // "기능 사진" 자리
             Rectangle()
                 .frame(width: 350, height: 350)
             Spacer()
@@ -61,3 +61,25 @@ struct FirstOnboardingView: View {
      }
 }
 
+struct SecondOnboardingView: View {
+    var body: some View {
+        VStack {
+            Spacer()
+                .frame(height: 84)
+            Text("코디 너로 결정!")
+                .font(.system(size: 30))
+                .bold()
+                .frame(height: 14)
+                .padding()
+            Text("내 옷장에 색상을 넣고\n같이 컬러 조합을 맞춰봐요")
+                .font(.system(size: 17))
+                .multilineTextAlignment(.center)
+            Spacer()
+                .frame(height: 75)
+            // "기능 사진" 자리
+            Rectangle()
+                .frame(width: 350, height: 350)
+            Spacer()
+         }
+     }
+}
