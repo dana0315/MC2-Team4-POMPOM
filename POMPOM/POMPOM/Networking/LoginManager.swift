@@ -13,6 +13,15 @@ import FirebaseAuth
 class LoginManager {
     static let shared = LoginManager()
     
+    var currentUser: User? {
+        Auth.auth().currentUser
+    }
+    
+    //로그인 여부 -> Bool 값 리턴
+    var isLogin: Bool {
+        self.currentUser != nil
+    }
+    
     func signInFirebase(with credential: OAuthCredential) {
         // Sign in with Firebase.
         Auth.auth().signIn(with: credential) { (authResult, error) in
@@ -22,6 +31,16 @@ class LoginManager {
                 // your request to Apple.
                 print(error?.localizedDescription)
                 return
+            }
+        }
+    }
+    
+    func signOut() {
+        currentUser?.delete { error in
+            if let error = error {
+                print("DEBUG: 회원탈퇴 에러 - \(error.localizedDescription)")
+            } else {
+                print("DEBUG: 회원탈퇴 성공")
             }
         }
     }
