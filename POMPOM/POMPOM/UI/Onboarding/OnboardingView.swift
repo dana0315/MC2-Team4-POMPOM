@@ -9,12 +9,55 @@ import SwiftUI
 
 struct OnboardingView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        VStack {
+            Spacer()
+                .frame(height: 84)
+            Text("내일 뭐 입고 올꺼야?")
+                .font(.system(size: 30))
+                .bold()
+                .frame(height: 14)
+                .padding()
+            Text("커플 인생샷을 남기고 싶은데\n상대방이 무엇이 입고올지 고민인가요?")
+                .font(.system(size: 17))
+                .multilineTextAlignment(.center)
+            Spacer()
+                .frame(height: 75)
+            // "물음표 곰돌이" 자리
+            Rectangle()
+                .frame(width: 350, height: 350)
+            Spacer()
+         }
+     }
 }
+
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingView()
     }
 }
+
+// "내일 뭐 입고 올거야?" Onboarding View
+struct FirstOnboardingView: View {
+    var body: some View {
+        VStack {
+            Spacer()
+                .frame(height: 84)
+            Text("내일 뭐 입고 올꺼야?")
+                .font(.system(size: 30))
+                .bold()
+                .frame(height: 14)
+                .padding()
+            Text("커플 인생샷을 남기고 싶은데\n상대방이 무엇이 입고올지 고민인가요?")
+                .font(.system(size: 17))
+                .multilineTextAlignment(.center)
+            Spacer()
+                .frame(height: 75)
+            // "물음표 곰돌이" 자리
+            Rectangle()
+                .frame(width: 350, height: 350)
+            Spacer()
+         }
+     }
+}
+
