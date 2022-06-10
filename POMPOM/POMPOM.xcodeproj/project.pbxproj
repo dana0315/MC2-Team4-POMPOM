@@ -62,6 +62,7 @@
 		A233C9F7EE2F43C44A16412C /* Pods_POMPOMTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POMPOMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D6499D492346083126C119 /* Pods-POMPOM-POMPOMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POMPOM-POMPOMUITests.debug.xcconfig"; path = "Target Support Files/Pods-POMPOM-POMPOMUITests/Pods-POMPOM-POMPOMUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C04FCAF5284E24020040F790 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C059279A2852FF8C0071751A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C06CE14A2851DC0900BBDA68 /* CoupleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleView.swift; sourceTree = "<group>"; };
 		C06CE14D2851DC5100BBDA68 /* CodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputView.swift; sourceTree = "<group>"; };
 		C06CE14F2851DC5C00BBDA68 /* CodeOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeOutputView.swift; sourceTree = "<group>"; };
@@ -246,6 +247,7 @@
 		C0A779C52849E1C50086810C /* POMPOM */ = {
 			isa = PBXGroup;
 			children = (
+				C059279A2852FF8C0071751A /* Info.plist */,
 				C0F90CB12850728F00CC2C0E /* Secrets */,
 				C0FF3531284E9FB6001B1129 /* POMPOM.entitlements */,
 				C04795C1284F15C10040646A /* System */,
@@ -293,7 +295,6 @@
 				C0A779C02849E1C50086810C /* Frameworks */,
 				C0A779C12849E1C50086810C /* Resources */,
 				83AB04DE08EBD25547A404E2 /* [CP] Embed Pods Frameworks */,
-				BBF81A665FDFD51C5B8E1587 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -332,7 +333,6 @@
 				C0A779DF2849E1C60086810C /* Frameworks */,
 				C0A779E02849E1C60086810C /* Resources */,
 				D92B47B84ACDB92A26193E55 /* [CP] Embed Pods Frameworks */,
-				B0854060051252977450F153 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -474,40 +474,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B0854060051252977450F153 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-POMPOM-POMPOMUITests/Pods-POMPOM-POMPOMUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-POMPOM-POMPOMUITests/Pods-POMPOM-POMPOMUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-POMPOM-POMPOMUITests/Pods-POMPOM-POMPOMUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BBF81A665FDFD51C5B8E1587 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-POMPOM/Pods-POMPOM-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-POMPOM/Pods-POMPOM-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-POMPOM/Pods-POMPOM-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D92B47B84ACDB92A26193E55 /* [CP] Embed Pods Frameworks */ = {
@@ -739,6 +705,7 @@
 				DEVELOPMENT_TEAM = 4DC5UF7YA9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = POMPOM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -772,6 +739,7 @@
 				DEVELOPMENT_TEAM = 4DC5UF7YA9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = POMPOM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

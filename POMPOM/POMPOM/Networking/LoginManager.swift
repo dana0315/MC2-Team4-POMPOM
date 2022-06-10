@@ -7,8 +7,10 @@
 
 import Foundation
 import AuthenticationServices
+import FirebaseCore
 import CryptoKit
 import FirebaseAuth
+import GoogleSignIn
 
 class LoginManager {
     static let shared = LoginManager()
@@ -19,7 +21,11 @@ class LoginManager {
     
     //로그인 여부 -> Bool 값 리턴
     var isLogin: Bool {
-        self.currentUser != nil
+        currentUser != nil
+    }
+    
+    var clientID: NSString? {
+        return FirebaseApp.app()?.options.clientID
     }
     
     func signInFirebase(with credential: OAuthCredential) {
@@ -35,6 +41,10 @@ class LoginManager {
         }
     }
     
+    func signInApple() {
+        
+    }
+    
     func signOut() {
         currentUser?.delete { error in
             if let error = error {
@@ -42,6 +52,38 @@ class LoginManager {
             } else {
                 print("DEBUG: 회원탈퇴 성공")
             }
+        }
+    }
+}
+
+class SignInWithGoogleObject: NSObject {
+    public func signWithGoogle() {
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+        
+        // Create Google Sign In configuration object.
+        let config = GIDConfiguration(clientID: clientID)
+    
+    
+        // Start the sign in flow!
+        GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { [unowned self] user, error in
+            
+            if let error = error {
+                // ...
+                return
+            }
+            
+            guard
+                let authentication = user?.authentication,
+                let idToken = authentication.idToken
+            else {
+                return
+            }
+            
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                           accessToken: authentication.accessToken)
+            
+            // ...
+            LoginManager.shared.signInFirebase(with: credential)
         }
     }
 }
@@ -142,16 +184,9 @@ extension SignInWithAppleObject: ASAuthorizationControllerDelegate {
             let credential = OAuthProvider.credential(withProviderID: "apple.com",
                                                       idToken: idTokenString,
                                                       rawNonce: nonce)
-            // Sign in with Firebase.
-            Auth.auth().signIn(with: credential) { (authResult, error) in
-                if (error != nil) {
-                    // Error. If error.code == .MissingOrInvalidNonce, make sure
-                    // you're sending the SHA256-hashed nonce as a hex string with
-                    // your request to Apple.
-                    print(error?.localizedDescription)
-                    return
-                }
-            }
+            //Firebase 로그인 메서드 호출.
+            LoginManager.shared.signInFirebase(with: credential)
+
         }
     }
     

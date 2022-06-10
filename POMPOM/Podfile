@@ -11,6 +11,7 @@ target 'POMPOM' do
   # For example, to use Firebase Authentication and Cloud Firestore
   pod 'FirebaseAuth'
   pod 'GoogleSignIn'
+  pod 'GoogleSignInSwiftSupport'
   pod 'FirebaseFirestore'
 
   target 'POMPOMTests' do
