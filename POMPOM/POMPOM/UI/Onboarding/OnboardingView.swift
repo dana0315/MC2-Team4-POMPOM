@@ -97,9 +97,11 @@ struct ThirdOnboardingView: View {
                 .lineSpacing(6)
             Spacer()
                 .frame(height: 75)
-            // "공유 사진" 자리
-            Rectangle()
-                .frame(width: 350, height: 350)
+            HStack {
+                Spacer()
+                Image("Connection")
+                Spacer()
+            }
             Spacer()
             Button(action: {
                 //임시코드 - 누르면 CoupleView로 넘어감.
