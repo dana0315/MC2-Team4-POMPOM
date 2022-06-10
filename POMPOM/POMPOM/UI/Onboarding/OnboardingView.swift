@@ -15,7 +15,7 @@ struct OnboardingView: View {
             ThirdOnboardingView()
         }
         .tabViewStyle(PageTabViewStyle())
-        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .never))
+        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
      }
 }
 
@@ -111,7 +111,9 @@ struct ThirdOnboardingView: View {
                     .background(Color.black)
                     .cornerRadius(8)
             }
-            .padding(30)
+            .padding(20)
+            Spacer()
+                .frame(height: 50)
          }
      }
 }
