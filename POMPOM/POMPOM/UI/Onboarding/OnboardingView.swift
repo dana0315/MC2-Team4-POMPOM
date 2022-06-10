@@ -9,35 +9,13 @@ import SwiftUI
 
 struct OnboardingView: View {
     var body: some View {
-        VStack {
-            Spacer()
-                .frame(height: 84)
-            Text("함께 맞춰봐요")
-                .font(.system(size: 30))
-                .bold()
-                .frame(height: 14)
-                .padding()
-            Text("상대방과 연결을 통해\n실시간으로 소통하며 확인해요")
-                .font(.system(size: 17))
-                .multilineTextAlignment(.center)
-            Spacer()
-                .frame(height: 75)
-            // "공유 사진" 자리
-            Rectangle()
-                .frame(width: 350, height: 350)
-            Spacer()
-            Button(action: {
-                //임시코드
-                print("시작하기")
-            }) {
-                Text("시작하기")
-                    .padding()
-                    .frame(width: 302, height: 50)
-                    .foregroundColor(.white)
-                    .background(Color.black)
-                    .cornerRadius(8)
-            }
-         }
+        TabView {
+            FirstOnboardingView()
+            SecondOnboardingView()
+            ThirdOnboardingView()
+        }
+        .tabViewStyle(PageTabViewStyle())
+        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .never))
      }
 }
 
