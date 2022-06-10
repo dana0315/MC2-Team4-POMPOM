@@ -105,6 +105,7 @@ struct ThirdOnboardingView: View {
                     .background(Color.black)
                     .cornerRadius(8)
             }
+            .padding(30)
          }
      }
 }
