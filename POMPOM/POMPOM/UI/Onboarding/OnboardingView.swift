@@ -71,9 +71,13 @@ struct SecondOnboardingView: View {
                 .lineSpacing(6)
             Spacer()
                 .frame(height: 75)
-            // "기능 사진" 자리
-            Rectangle()
-                .frame(width: 350, height: 350)
+            HStack {
+                Spacer()
+                    .frame(width: 5)
+                Image("ChooseClothes")
+                Spacer()
+            }
+            
             Spacer()
          }
      }
