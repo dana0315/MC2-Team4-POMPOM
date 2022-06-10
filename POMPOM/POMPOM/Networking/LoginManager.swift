@@ -24,10 +24,6 @@ class LoginManager {
         currentUser != nil
     }
     
-    var clientID: NSString? {
-        return FirebaseApp.app()?.options.clientID
-    }
-    
     func signInFirebase(with credential: OAuthCredential) {
         // Sign in with Firebase.
         Auth.auth().signIn(with: credential) { (authResult, error) in
@@ -41,10 +37,18 @@ class LoginManager {
         }
     }
     
-    func signInApple() {
-        
+    
+    //로그아웃 메서드.
+    func logOut() {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
     }
     
+    //회원탈퇴 메서드
     func signOut() {
         currentUser?.delete { error in
             if let error = error {
@@ -55,38 +59,38 @@ class LoginManager {
         }
     }
 }
-
-class SignInWithGoogleObject: NSObject {
-    public func signWithGoogle() {
-        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-        
-        // Create Google Sign In configuration object.
-        let config = GIDConfiguration(clientID: clientID)
-    
-    
-        // Start the sign in flow!
-        GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { [unowned self] user, error in
-            
-            if let error = error {
-                // ...
-                return
-            }
-            
-            guard
-                let authentication = user?.authentication,
-                let idToken = authentication.idToken
-            else {
-                return
-            }
-            
-            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
-                                                           accessToken: authentication.accessToken)
-            
-            // ...
-            LoginManager.shared.signInFirebase(with: credential)
-        }
-    }
-}
+//
+//class SignInWithGoogleObject: NSObject {
+//    public func signWithGoogle() {
+//        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+//        
+//        // Create Google Sign In configuration object.
+//        let config = GIDConfiguration(clientID: clientID)
+//    
+//    
+//        // Start the sign in flow!
+//        GIDSignIn.sharedInstance.signIn(with: config) { [unowned self] user, error in
+//            
+//            if let error = error {
+//                // ...
+//                return
+//            }
+//            
+//            guard
+//                let authentication = user?.authentication,
+//                let idToken = authentication.idToken
+//            else {
+//                return
+//            }
+//            
+//            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+//                                                           accessToken: authentication.accessToken)
+//            
+//            // ...
+//            LoginManager.shared.signInFirebase(with: credential)
+//        }
+//    }
+//}
 
 
 
