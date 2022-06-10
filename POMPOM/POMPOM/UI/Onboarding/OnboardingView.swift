@@ -33,8 +33,7 @@ struct FirstOnboardingView: View {
             Spacer()
                 .frame(height: 84)
             Text("내일 뭐 입고 올꺼야?")
-                .font(.system(size: 30))
-                .bold()
+                .font(.system(size: 30, weight: .heavy ))
                 .frame(height: 20)
                 .padding(17)
             Text("커플 인생샷을 남기고 싶은데\n상대방이 무엇이 입고올지 고민인가요?")
@@ -61,8 +60,7 @@ struct SecondOnboardingView: View {
             Spacer()
                 .frame(height: 84)
             Text("코디 너로 결정!")
-                .font(.system(size: 30))
-                .bold()
+                .font(.system(size: 30,  weight: .heavy))
                 .frame(height: 20)
                 .padding(17)
             Text("내 옷장에 색상을 넣고\n같이 컬러 조합을 맞춰봐요")
@@ -90,8 +88,7 @@ struct ThirdOnboardingView: View {
             Spacer()
                 .frame(height: 84)
             Text("함께 맞춰봐요")
-                .font(.system(size: 30))
-                .bold()
+                .font(.system(size: 30, weight: .heavy))
                 .frame(height: 20)
                 .padding(17)
             Text("상대방과 연결을 통해\n실시간으로 소통하며 확인해요")
@@ -105,7 +102,7 @@ struct ThirdOnboardingView: View {
                 .frame(width: 350, height: 350)
             Spacer()
             Button(action: {
-                //임시코드
+                //임시코드 - 누르면 CoupleView로 넘어감.
                 print("시작하기")
             }) {
                 Text("시작하기")
