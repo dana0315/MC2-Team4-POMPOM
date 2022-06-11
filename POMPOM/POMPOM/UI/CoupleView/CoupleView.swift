@@ -9,7 +9,23 @@ import SwiftUI
 
 struct CoupleView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                
+            }
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("POMPOM")
+                        .font(.custom("Montserrat-ExtraBold", size: 20))
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: Text("Hello world")) {
+                        Image(systemName: "gearshape.fill")
+                            .foregroundColor(Color(UIColor.label))
+                    }
+                }
+            }
+        }
     }
 }
 
