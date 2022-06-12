@@ -24,6 +24,7 @@ struct CoupleView: View {
     @State private var actionSheetPresented = false
     @State private var selectedTab = "home"
     @State private var codeInput = ""
+    @State private var commentInput = ""
     
     var body: some View {
         NavigationView {
@@ -52,6 +53,7 @@ struct CoupleView: View {
                     }
                     .offset(y: characterOffset)
                     Spacer()
+                    CommentTextField(textInput: $commentInput)
                 }
                 .tag("home")
                 
@@ -77,6 +79,7 @@ struct CoupleView: View {
                     }
                 }
             }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .actionSheet(isPresented: $actionSheetPresented) {
                 ActionSheet(title: Text("초대코드 확인/입력"), buttons: [
                     .default(Text("초대코드 확인하기")) {
