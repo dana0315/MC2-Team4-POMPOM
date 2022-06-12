@@ -79,7 +79,6 @@ struct CoupleView: View {
                     }
                 }
             }
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .actionSheet(isPresented: $actionSheetPresented) {
                 ActionSheet(title: Text("초대코드 확인/입력"), buttons: [
                     .default(Text("초대코드 확인하기")) {
@@ -89,6 +88,9 @@ struct CoupleView: View {
                     selectedTab = "codeInput"
                     codeInput = ""
                 }, .cancel(Text("돌아가기"))])
+            }
+            .onAppear {
+                UITabBar.appearance().isHidden = true
             }
         }
     }
