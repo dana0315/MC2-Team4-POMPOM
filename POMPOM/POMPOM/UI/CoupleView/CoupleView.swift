@@ -29,31 +29,37 @@ struct CoupleView: View {
     var body: some View {
         NavigationView {
             TabView(selection: $selectedTab, content: {
-                VStack {
-                    HStack(spacing: characterSpacing) {
-                        Button {
-                            actionSheetPresented = true
-                        } label: {
-                            ZStack {
-                                Image("Character")
-                                    .scaledToFit()
-                                    .frame(width: characterWidth)
-                                    .opacity(partnerConnected ? 1 : 0.3)
-                                if !partnerConnected {
-                                    Text("초대하기")
-                                        .foregroundColor(.orange)
+                ZStack {
+                    VStack {
+                        HStack(spacing: characterSpacing) {
+                            Button {
+                                actionSheetPresented = true
+                            } label: {
+                                ZStack {
+                                    Image("Character")
+                                        .scaledToFit()
+                                        .frame(width: characterWidth)
+                                        .opacity(partnerConnected ? 1 : 0.3)
+                                    if !partnerConnected {
+                                        Text("초대하기")
+                                            .foregroundColor(.orange)
+                                    }
                                 }
                             }
-                        }
-                        .disabled(partnerConnected)
+                            .disabled(partnerConnected)
 
-                        Image("Character")
-                            .scaledToFit()
-                            .frame(width: characterWidth)
+                            Image("Character")
+                                .scaledToFit()
+                                .frame(width: characterWidth)
+                        }
+                        .offset(y: characterOffset)
+                        Spacer()
                     }
-                    .offset(y: characterOffset)
-                    Spacer()
-                    CommentTextField(textInput: $commentInput)
+                    
+                    VStack {
+                        Spacer()
+                        CommentTextField(textInput: $commentInput)
+                    }
                 }
                 .tag("home")
                 
