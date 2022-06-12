@@ -8,9 +8,17 @@
 import SwiftUI
 
 struct CoupleView: View {
-    static let characterSpacing = Constant.screenWidth * (33 / 390)
-    static let characterWidth = Constant.screenWidth * (145 / 390)
-    static let characterOffset = Constant.screenHeight * (93 / 844)
+    var characterSpacing: CGFloat {
+        Constant.screenWidth * (33 / 390)
+    }
+    
+    var characterWidth: CGFloat {
+        Constant.screenWidth * (145 / 390)
+    }
+    
+    var characterOffset: CGFloat {
+        Constant.screenHeight * (93 / 844)
+    }
     
     @State private var partnerConnected = false
     @State private var actionSheetPresented = false
@@ -21,14 +29,14 @@ struct CoupleView: View {
         NavigationView {
             TabView(selection: $selectedTab, content: {
                 VStack {
-                    HStack(spacing: Self.characterSpacing) {
+                    HStack(spacing: characterSpacing) {
                         Button {
                             actionSheetPresented = true
                         } label: {
                             ZStack {
                                 Image("Character")
                                     .scaledToFit()
-                                    .frame(width: Self.characterWidth)
+                                    .frame(width: characterWidth)
                                     .opacity(partnerConnected ? 1 : 0.3)
                                 if !partnerConnected {
                                     Text("초대하기")
@@ -40,9 +48,9 @@ struct CoupleView: View {
 
                         Image("Character")
                             .scaledToFit()
-                            .frame(width: Self.characterWidth)
+                            .frame(width: characterWidth)
                     }
-                    .offset(y: Self.characterOffset)
+                    .offset(y: characterOffset)
                     Spacer()
                 }
                 .tag("home")
