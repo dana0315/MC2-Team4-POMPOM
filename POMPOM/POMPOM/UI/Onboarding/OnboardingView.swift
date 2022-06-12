@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    
+    // CoupleView에 밑에 코드 추가
+    //@AppStorage("_isFirstLanching") var isFirstLaunching: Bool = true
+    
+    //@Binding var isFirstLunching: Bool
+    
     var body: some View {
         TabView {
             FirstOnboardingView()
@@ -106,6 +112,9 @@ struct ThirdOnboardingView: View {
             Button(action: {
                 //임시코드 - 누르면 CoupleView로 넘어감.
                 print("시작하기")
+                // isFirstLaunching.toggle()
+                // 위에 코드로 변경예정
+                
             }) {
                 Text("시작하기")
                     .padding()
