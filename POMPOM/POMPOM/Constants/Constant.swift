@@ -9,6 +9,10 @@ import Foundation
 import UIKit
 
 struct Constant {
-    static let screenWidth = UIScreen.main.bounds.width
-    static let screenHeight = UIScreen.main.bounds.height
+    static var screenWidth: CGFloat {
+        UIScreen.main.bounds.width
+    }
+    static var screenHeight: CGFloat {
+        UIScreen.main.bounds.height
+    }
 }
