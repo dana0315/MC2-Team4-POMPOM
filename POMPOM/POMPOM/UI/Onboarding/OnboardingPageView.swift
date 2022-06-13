@@ -36,6 +36,26 @@ struct OnboardingPageView: View {
                 Spacer()
             }
             Spacer()
+            if onboardingViewModel.isLast {
+                Button(action: {
+                                //임시코드 - 누르면 CoupleView로 넘어감.
+                                print("시작하기")
+                                // isFirstLaunching.toggle()
+                                // 위에 코드로 변경예정
+                                
+                            }) {
+                                Text("시작하기")
+                                    .padding()
+                                    .frame(width: 302, height: 50)
+                                    .foregroundColor(.white)
+                                    .background(Color.black)
+                                    .cornerRadius(8)
+                            }
+                            .padding(20)
+                            Spacer()
+                                .frame(height: 40)
+
+            }
          }
      }
 }
