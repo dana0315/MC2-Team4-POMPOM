@@ -61,24 +61,18 @@ struct CodeView<Content: View>: View {
             }
             .frame(height: Constant.screenHeight * (206 / 844))
             .padding(.horizontal, 8)
-            .padding(.bottom, Constant.screenHeight * (215 / 844))
         }
-        .padding(.top, Constant.screenHeight * (106 / 844))
-        .edgesIgnoringSafeArea(.bottom)
+        .edgesIgnoringSafeArea(.all)
         .frame(maxHeight: .infinity)
     }
 }
 
 struct CodeTemplateView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            CodeView(title: "초대코드 확인", content: {
-                Text("XEDAASDF")
-            }, buttonTitle: "복사", buttonAction: {
-                
-            })
-            .navigationTitle("POMPOM")
-            .navigationBarTitleDisplayMode(.inline)
-        }
+        CodeView(title: "초대코드 확인", content: {
+            Text("XEDAASDF")
+        }, buttonTitle: "복사", buttonAction: {
+            
+        })
     }
 }
