@@ -10,7 +10,6 @@ import SwiftUI
 struct CommentTextField: View {
     let height = Constant.screenHeight * (48 / 844)
     let spacing = Constant.screenWidth * (17.8 / 390)
-    let fontSize = Constant.screenHeight * (16 / 844)
     
     let logoHeight = Constant.screenHeight * (16.28 / 844)
     var logoWidth: CGFloat {
@@ -37,7 +36,7 @@ struct CommentTextField: View {
                     .frame(width: logoWidth, height: logoHeight)
                     .padding(.leading, leftMargin)
                 TextField("코멘트를 입력하세요.", text: _textInput)
-                    .font(.system(size: fontSize))
+                    .font(.body)
                 Button(action: {}) {
                     Image(systemName: "location.fill")
                         .foregroundColor(buttonColor)
