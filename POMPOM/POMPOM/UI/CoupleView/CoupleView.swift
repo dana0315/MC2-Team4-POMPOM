@@ -7,17 +7,39 @@
 
 import SwiftUI
 
+enum CharacterSize {
+    case large, medium, small
+}
+
 struct CoupleView: View {
     var characterSpacing: CGFloat {
         Constant.screenWidth * (33 / 390)
     }
     
     var characterWidth: CGFloat {
-        Constant.screenWidth * (145 / 390)
+        switch characterSize {
+        case .large:
+            return Constant.screenWidth * (145 / 390)
+        case .medium:
+            return Constant.screenWidth * (114 / 390)
+        case .small:
+            return Constant.screenWidth * (54 / 390)
+        }
     }
     
     var characterOffset: CGFloat {
-        Constant.screenHeight * (93 / 844)
+        switch characterSize {
+        case .large:
+            return Constant.screenHeight * (93 / 844)
+        case .medium:
+            return Constant.screenHeight * (-29 / 844)
+        case .small:
+            return Constant.screenHeight * (-43 / 844)
+        }
+    }
+    
+    var characterHeight: CGFloat {
+        characterWidth * (215.68 / 114)
     }
     
     @State private var partnerConnected = false
@@ -26,32 +48,39 @@ struct CoupleView: View {
     @State private var commentInput = ""
     @State private var codeInputViewIsPresented = false
     @State private var codeOutputViewIsPresented = false
+    @State private var characterSize = CharacterSize.large
     
     var body: some View {
         NavigationView {
             VStack {
                 HStack(spacing: characterSpacing) {
-                    Button {
-                        actionSheetPresented = true
-                    } label: {
-                        ZStack {
-                            Image("Character")
-                                .scaledToFit()
-                                .frame(width: characterWidth)
-                                .opacity(partnerConnected ? 1 : 0.3)
-                            if !partnerConnected {
-                                Text("초대하기")
-                                    .foregroundColor(.orange)
+                    if characterSize == .large {
+                        Button {
+                            actionSheetPresented = true
+                        } label: {
+                            ZStack {
+                                Image("Character")
+                                    .resizable()
+                                    .frame(width: characterWidth, height: characterHeight)
+                                    .opacity(partnerConnected ? 1 : 0.3)
+                                
+                                if !partnerConnected {
+                                    Text("초대하기")
+                                        .foregroundColor(.orange)
+                                }
                             }
                         }
+                        .disabled(partnerConnected)
                     }
-                    .disabled(partnerConnected)
 
                     Image("Character")
-                        .scaledToFit()
-                        .frame(width: characterWidth)
+                        .resizable()
+                        .frame(width: characterWidth, height: characterHeight)
                 }
                 .offset(y: characterOffset)
+                .animation(.default, value: characterWidth)
+                .animation(.default, value: characterHeight)
+                .animation(.default, value: characterOffset)
                 Spacer()
                 CommentTextField(textInput: $commentInput)
             }
