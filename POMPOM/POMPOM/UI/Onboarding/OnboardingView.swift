@@ -42,9 +42,9 @@ struct OnboardingView: View {
     
     var body: some View {
         TabView {
-            OnboardingPageView(onboardingViewModel: onboardingViewData[0])
-            OnboardingPageView(onboardingViewModel: onboardingViewData[1])
-            OnboardingPageView(onboardingViewModel: onboardingViewData[2])
+            ForEach(onboardingViewData) {item in
+                OnboardingPageView(onboardingViewModel: item)
+            }
         }
         .tabViewStyle(PageTabViewStyle())
         .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
