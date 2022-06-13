@@ -22,7 +22,6 @@
 		C06CE14E2851DC5100BBDA68 /* CodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE14D2851DC5100BBDA68 /* CodeInputView.swift */; };
 		C06CE1502851DC5C00BBDA68 /* CodeOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE14F2851DC5C00BBDA68 /* CodeOutputView.swift */; };
 		C06CE1532851DC7F00BBDA68 /* CoupleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE1522851DC7F00BBDA68 /* CoupleViewModel.swift */; };
-		C06CE1552851DCA100BBDA68 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE1542851DCA100BBDA68 /* LoginManager.swift */; };
 		C06CE1572851DCB100BBDA68 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE1562851DCB100BBDA68 /* FirebaseManager.swift */; };
 		C06CE1592851DCD600BBDA68 /* CodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE1582851DCD600BBDA68 /* CodeViewModel.swift */; };
 		C06CE15B2851DCFE00BBDA68 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE15A2851DCFE00BBDA68 /* ConnectionManager.swift */; };
@@ -85,7 +84,6 @@
 		C06CE14D2851DC5100BBDA68 /* CodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputView.swift; sourceTree = "<group>"; };
 		C06CE14F2851DC5C00BBDA68 /* CodeOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeOutputView.swift; sourceTree = "<group>"; };
 		C06CE1522851DC7F00BBDA68 /* CoupleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleViewModel.swift; sourceTree = "<group>"; };
-		C06CE1542851DCA100BBDA68 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		C06CE1562851DCB100BBDA68 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		C06CE1582851DCD600BBDA68 /* CodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewModel.swift; sourceTree = "<group>"; };
 		C06CE15A2851DCFE00BBDA68 /* ConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
@@ -218,7 +216,6 @@
 			isa = PBXGroup;
 			children = (
 				C0754BA6284F1921005DBAFC /* DummyNetworkManager.swift */,
-				C06CE1542851DCA100BBDA68 /* LoginManager.swift */,
 				C06CE1562851DCB100BBDA68 /* FirebaseManager.swift */,
 				C06CE15A2851DCFE00BBDA68 /* ConnectionManager.swift */,
 				C06CE15F2851DD6700BBDA68 /* NotificationManager.swift */,
@@ -584,7 +581,6 @@
 				C06CE1502851DC5C00BBDA68 /* CodeOutputView.swift in Sources */,
 				C06CE14E2851DC5100BBDA68 /* CodeInputView.swift in Sources */,
 				ABFEE2122855A86D007817D3 /* CodeView.swift in Sources */,
-				C06CE1552851DCA100BBDA68 /* LoginManager.swift in Sources */,
 				C0754BA7284F1921005DBAFC /* DummyNetworkManager.swift in Sources */,
 				C06CE15B2851DCFE00BBDA68 /* ConnectionManager.swift in Sources */,
 				AB132FED2854BF500023DBD0 /* Constant.swift in Sources */,
