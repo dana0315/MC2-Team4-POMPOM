@@ -34,6 +34,7 @@
 		C0F90CB32850729E00CC2C0E /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F90CB22850729E00CC2C0E /* Secret.swift */; };
 		CD5064FE72AD933795FF0668 /* Pods_POMPOM_POMPOMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A3C5F2FE47AEF89866EEFA6 /* Pods_POMPOM_POMPOMUITests.framework */; };
 		D40F41842857135D0037B3EB /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F41832857135D0037B3EB /* OnboardingViewModel.swift */; };
+		D40F418628571FE70037B3EB /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F418528571FE70037B3EB /* OnboardingPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		C0FF3531284E9FB6001B1129 /* POMPOM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = POMPOM.entitlements; sourceTree = "<group>"; };
 		C350ECAB77A213FE32F7F534 /* Pods-POMPOMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-POMPOMTests.release.xcconfig"; sourceTree = "<group>"; };
 		D40F41832857135D0037B3EB /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		D40F418528571FE70037B3EB /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 			children = (
 				C06CE15D2851DD4800BBDA68 /* OnboardingView.swift */,
 				D40F41832857135D0037B3EB /* OnboardingViewModel.swift */,
+				D40F418528571FE70037B3EB /* OnboardingPageView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				C06CE15B2851DCFE00BBDA68 /* ConnectionManager.swift in Sources */,
 				C0A779C72849E1C50086810C /* POMPOMApp.swift in Sources */,
 				C06CE1602851DD6700BBDA68 /* NotificationManager.swift in Sources */,
+				D40F418628571FE70037B3EB /* OnboardingPageView.swift in Sources */,
 				C06CE1572851DCB100BBDA68 /* FirebaseManager.swift in Sources */,
 				C06CE1632851DD8500BBDA68 /* LoginView.swift in Sources */,
 				C0A779D32849E1C60086810C /* Model.xcdatamodeld in Sources */,

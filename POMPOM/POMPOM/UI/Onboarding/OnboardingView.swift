@@ -31,37 +31,3 @@ struct OnboardingView_Previews: PreviewProvider {
         OnboardingView()
     }
 }
-
-///한개의 뷰로 구현
-struct OnboardingPageView: View {
-    var onboardingViewModel: OnboardingViewModel
-    
-    
-    init(onboardingViewModel: OnboardingViewModel) {
-        self.onboardingViewModel = onboardingViewModel
-    }
-    
-    var body: some View {
-        VStack {
-            Spacer()
-                .frame(height: 84)
-            Text(onboardingViewModel.title)
-                .font(.system(size: 30, weight: .heavy))
-                .frame(height: 20)
-                .padding(17)
-            Text(onboardingViewModel.message)
-                .font(.system(size: 17))
-                .multilineTextAlignment(.center)
-                .lineSpacing(6)
-            Spacer()
-                .frame(height: 80)
-            HStack {
-                Spacer()
-                    .frame(width: onboardingViewModel.ImageSpacer)
-                Image(onboardingViewModel.onboardingImage)
-                Spacer()
-            }
-            Spacer()
-         }
-     }
-}
