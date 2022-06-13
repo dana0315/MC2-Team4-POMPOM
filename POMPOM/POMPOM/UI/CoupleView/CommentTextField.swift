@@ -8,19 +8,6 @@
 import SwiftUI
 
 struct CommentTextField: View {
-    let height = Constant.screenHeight * (48 / 844)
-    let spacing = Constant.screenWidth * (17.8 / 390)
-    
-    let logoHeight = Constant.screenHeight * (16.28 / 844)
-    var logoWidth: CGFloat {
-        logoHeight * (22.2 / 16.28)
-    }
-    
-    let leftMargin = Constant.screenWidth * (18 / 390)
-    let rightMargin = Constant.screenWidth * (5 / 390)
-    
-    let buttonUnitLength = Constant.screenHeight * (44 / 844)
-    
     var buttonColor: Color {
         textInput.isEmpty ? Color(UIColor.systemGray2) : .orange
     }
@@ -29,23 +16,23 @@ struct CommentTextField: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: height / 2)
+            RoundedRectangle(cornerRadius: 24)
                 .foregroundColor(Color(UIColor.systemGray5))
-            HStack(spacing: spacing) {
+            HStack(spacing: 17.8) {
                 Rectangle()
-                    .frame(width: logoWidth, height: logoHeight)
-                    .padding(.leading, leftMargin)
+                    .frame(width: 22.2, height: 16.28)
+                    .padding(.leading, 18)
                 TextField("코멘트를 입력하세요.", text: _textInput)
                     .font(.body)
                 Button(action: {}) {
                     Image(systemName: "location.fill")
                         .foregroundColor(buttonColor)
                 }
-                .frame(width: buttonUnitLength, height: buttonUnitLength)
-                .padding(.trailing, rightMargin)
+                .frame(width: 44, height: 44)
+                .padding(.trailing, 5)
             }
         }
-        .frame(height: height)
+        .frame(height: 48)
     }
 }
 
