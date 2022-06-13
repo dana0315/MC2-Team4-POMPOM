@@ -32,14 +32,14 @@ struct OnboardingView_Previews: PreviewProvider {
     }
 }
 
-// "내일 뭐 입고 올거야?" Onboarding View
+/// "내일 뭐 입고 올거야?" Onboarding View
 struct FirstOnboardingView: View {
     var body: some View {
         VStack {
             Spacer()
                 .frame(height: 84)
             Text("내일 뭐 입고 올꺼야?")
-                .font(.system(size: 30, weight: .heavy ))
+                .font(.system(size: 30, weight: .heavy))
                 .frame(height: 20)
                 .padding(17)
             Text("커플 인생샷을 남기고 싶은데\n상대방이 무엇이 입고올지 고민인가요?")
@@ -59,7 +59,7 @@ struct FirstOnboardingView: View {
      }
 }
 
-// "코디 너로 결정!" Onboarding View
+/// "코디 너로 결정!" Onboarding View
 struct SecondOnboardingView: View {
     var body: some View {
         VStack {
@@ -87,7 +87,7 @@ struct SecondOnboardingView: View {
      }
 }
 
-// "함께 맞춰봐요" Onboarding View
+/// "함께 맞춰봐요" Onboarding View
 struct ThirdOnboardingView: View {
     var body: some View {
         VStack {
@@ -126,6 +126,45 @@ struct ThirdOnboardingView: View {
             .padding(20)
             Spacer()
                 .frame(height: 50)
+         }
+     }
+}
+
+//한개의 뷰로 구현
+struct OnboardingPageView: View {
+    var title: String
+    var message: String
+    var onboardingImage: String
+    var ImageSpacer: CGFloat
+    
+    init(title: String, message: String, onbordingImage: String, ImageSpacer: CGFloat) {
+        self.title = title
+        self.message = message
+        self.onboardingImage = onbordingImage
+        self.ImageSpacer = ImageSpacer
+    }
+    
+    var body: some View {
+        VStack {
+            Spacer()
+                .frame(height: 84)
+            Text(title)
+                .font(.system(size: 30, weight: .heavy))
+                .frame(height: 20)
+                .padding(17)
+            Text(message)
+                .font(.system(size: 17))
+                .multilineTextAlignment(.center)
+                .lineSpacing(6)
+            Spacer()
+                .frame(height: 80)
+            HStack {
+                Spacer()
+                    .frame(width: ImageSpacer)
+                Image(onboardingImage)
+                Spacer()
+            }
+            Spacer()
          }
      }
 }
