@@ -14,6 +14,9 @@
 		AB132FED2854BF500023DBD0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB132FEC2854BF500023DBD0 /* Constant.swift */; };
 		ABFEE2122855A86D007817D3 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFEE2112855A86D007817D3 /* CodeView.swift */; };
 		ABFEE2142855F2C1007817D3 /* CommentTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFEE2132855F2C1007817D3 /* CommentTextField.swift */; };
+		AEA32AA9285741C5006A31D4 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA32AA8285741C5006A31D4 /* ChatView.swift */; };
+		AEA32AAB285741CF006A31D4 /* MessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA32AAA285741CF006A31D4 /* MessageListView.swift */; };
+		AEA32AAD285741DB006A31D4 /* MessageBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA32AAC285741DB006A31D4 /* MessageBubbleView.swift */; };
 		C04FCAF6284E24020040F790 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C04FCAF5284E24020040F790 /* GoogleService-Info.plist */; };
 		C06CE14B2851DC0900BBDA68 /* CoupleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE14A2851DC0900BBDA68 /* CoupleView.swift */; };
 		C06CE14E2851DC5100BBDA68 /* CodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE14D2851DC5100BBDA68 /* CodeInputView.swift */; };
@@ -72,6 +75,9 @@
 		AB132FEC2854BF500023DBD0 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		ABFEE2112855A86D007817D3 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		ABFEE2132855F2C1007817D3 /* CommentTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTextField.swift; sourceTree = "<group>"; };
+		AEA32AA8285741C5006A31D4 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		AEA32AAA285741CF006A31D4 /* MessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListView.swift; sourceTree = "<group>"; };
+		AEA32AAC285741DB006A31D4 /* MessageBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubbleView.swift; sourceTree = "<group>"; };
 		B4D6499D492346083126C119 /* Pods-POMPOM-POMPOMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POMPOM-POMPOMUITests.debug.xcconfig"; path = "Target Support Files/Pods-POMPOM-POMPOMUITests/Pods-POMPOM-POMPOMUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C04FCAF5284E24020040F790 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C059279A2852FF8C0071751A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -101,10 +107,9 @@
 		C0A779E82849E1C60086810C /* POMPOMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POMPOMUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C0F90CB22850729E00CC2C0E /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		C0FF3531284E9FB6001B1129 /* POMPOM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = POMPOM.entitlements; sourceTree = "<group>"; };
-		C350ECAB77A213FE32F7F534 /* Pods-POMPOMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-POMPOMTests.release.xcconfig"; sourceTree = "<group>"; };
+		C350ECAB77A213FE32F7F534 /* Target Support Files/Pods-POMPOMTests/Pods-POMPOMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Target Support Files/Pods-POMPOMTests/Pods-POMPOMTests.release.xcconfig"; sourceTree = "<group>"; };
 		D40F41832857135D0037B3EB /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		D40F418528571FE70037B3EB /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
-		C350ECAB77A213FE32F7F534 /* Target Support Files/Pods-POMPOMTests/Pods-POMPOMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Target Support Files/Pods-POMPOMTests/Pods-POMPOMTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +171,16 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		AEA32AA7285741B5006A31D4 /* ChatView */ = {
+			isa = PBXGroup;
+			children = (
+				AEA32AA8285741C5006A31D4 /* ChatView.swift */,
+				AEA32AAA285741CF006A31D4 /* MessageListView.swift */,
+				AEA32AAC285741DB006A31D4 /* MessageBubbleView.swift */,
+			);
+			path = ChatView;
+			sourceTree = "<group>";
+		};
 		C04795C1284F15C10040646A /* System */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +205,7 @@
 		C04795C5284F15D20040646A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				AEA32AA7285741B5006A31D4 /* ChatView */,
 				C06CE1612851DD7700BBDA68 /* LoginView */,
 				C06CE15C2851DD1C00BBDA68 /* Onboarding */,
 				C06CE14C2851DC2600BBDA68 /* CoupleView */,
@@ -558,8 +574,10 @@
 				C06CE1532851DC7F00BBDA68 /* CoupleViewModel.swift in Sources */,
 				C0F90CB32850729E00CC2C0E /* Secret.swift in Sources */,
 				C06CE15E2851DD4800BBDA68 /* OnboardingView.swift in Sources */,
+				AEA32AAB285741CF006A31D4 /* MessageListView.swift in Sources */,
 				C06CE14B2851DC0900BBDA68 /* CoupleView.swift in Sources */,
 				C0754BA7284F1921005DBAFC /* DummyNetworkManager.swift in Sources */,
+				AEA32AA9285741C5006A31D4 /* ChatView.swift in Sources */,
 				C06CE1592851DCD600BBDA68 /* CodeViewModel.swift in Sources */,
 				C0A779C72849E1C50086810C /* POMPOMApp.swift in Sources */,
 				C0F90CB32850729E00CC2C0E /* Secret.swift in Sources */,
@@ -578,6 +596,7 @@
 				C06CE1632851DD8500BBDA68 /* LoginView.swift in Sources */,
 				C0A779D32849E1C60086810C /* Model.xcdatamodeld in Sources */,
 				D40F41842857135D0037B3EB /* OnboardingViewModel.swift in Sources */,
+				AEA32AAD285741DB006A31D4 /* MessageBubbleView.swift in Sources */,
 				C06CE1652851DDAB00BBDA68 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
