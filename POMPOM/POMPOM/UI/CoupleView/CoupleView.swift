@@ -53,6 +53,7 @@ struct CoupleView: View {
                 }
                 .offset(y: characterOffset)
                 Spacer()
+                CommentTextField(textInput: $commentInput)
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {
