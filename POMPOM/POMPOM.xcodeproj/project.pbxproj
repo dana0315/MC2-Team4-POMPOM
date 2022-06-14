@@ -34,9 +34,7 @@
 		C0A779CB2849E1C60086810C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A779CA2849E1C60086810C /* Assets.xcassets */; };
 		C0A779CE2849E1C60086810C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A779CD2849E1C60086810C /* Preview Assets.xcassets */; };
 		C0A779D32849E1C60086810C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0A779D12849E1C60086810C /* Model.xcdatamodeld */; };
-		C0A779DD2849E1C60086810C /* POMPOMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A779DC2849E1C60086810C /* POMPOMTests.swift */; };
-		C0A779E72849E1C60086810C /* POMPOMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A779E62849E1C60086810C /* POMPOMUITests.swift */; };
-		C0A779E92849E1C60086810C /* POMPOMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A779E82849E1C60086810C /* POMPOMUITestsLaunchTests.swift */; };
+		C0ED415A285868F1007E5502 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ED4159285868F1007E5502 /* Color.swift */; };
 		C0F1DC0028575BA700F8EAA0 /* ClothPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1DBFF28575BA700F8EAA0 /* ClothPickerView.swift */; };
 		C0F1DC0328575BCB00F8EAA0 /* PickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1DC0228575BCB00F8EAA0 /* PickerViewModel.swift */; };
 		C0F90CB32850729E00CC2C0E /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F90CB22850729E00CC2C0E /* Secret.swift */; };
@@ -81,11 +79,7 @@
 		C0A779CA2849E1C60086810C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0A779CD2849E1C60086810C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C0A779D22849E1C60086810C /* POMPOM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = POMPOM.xcdatamodel; sourceTree = "<group>"; };
-		C0A779D82849E1C60086810C /* POMPOMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POMPOMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0A779DC2849E1C60086810C /* POMPOMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POMPOMTests.swift; sourceTree = "<group>"; };
-		C0A779E22849E1C60086810C /* POMPOMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POMPOMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0A779E62849E1C60086810C /* POMPOMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POMPOMUITests.swift; sourceTree = "<group>"; };
-		C0A779E82849E1C60086810C /* POMPOMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POMPOMUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C0ED4159285868F1007E5502 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		C0F1DBFF28575BA700F8EAA0 /* ClothPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothPickerView.swift; sourceTree = "<group>"; };
 		C0F1DC0228575BCB00F8EAA0 /* PickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewModel.swift; sourceTree = "<group>"; };
 		C0F90CB22850729E00CC2C0E /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
@@ -255,7 +249,7 @@
 		C0A779C52849E1C50086810C /* POMPOM */ = {
 			isa = PBXGroup;
 			children = (
-				AB132FEB2854BF430023DBD0 /* Constants */,
+				C0ED4157285868D7007E5502 /* Util */,
 				C059279A2852FF8C0071751A /* Info.plist */,
 				C0F90CB12850728F00CC2C0E /* Secrets */,
 				C0FF3531284E9FB6001B1129 /* POMPOM.entitlements */,
@@ -267,21 +261,21 @@
 			path = POMPOM;
 			sourceTree = "<group>";
 		};
-		C0A779DB2849E1C60086810C /* POMPOMTests */ = {
+		C0ED4157285868D7007E5502 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				C0A779DC2849E1C60086810C /* POMPOMTests.swift */,
+				C0ED4158285868E4007E5502 /* Extensions */,
+				AB132FEB2854BF430023DBD0 /* Constants */,
 			);
-			path = POMPOMTests;
+			path = Util;
 			sourceTree = "<group>";
 		};
-		C0A779E52849E1C60086810C /* POMPOMUITests */ = {
+		C0ED4158285868E4007E5502 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C0A779E62849E1C60086810C /* POMPOMUITests.swift */,
-				C0A779E82849E1C60086810C /* POMPOMUITestsLaunchTests.swift */,
+				C0ED4159285868F1007E5502 /* Color.swift */,
 			);
-			path = POMPOMUITests;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C0F1DBFE28575B9100F8EAA0 /* ClothPickerView */ = {
@@ -449,6 +443,7 @@
 				D40F418628571FE70037B3EB /* OnboardingPageView.swift in Sources */,
 				C06CE1572851DCB100BBDA68 /* FirebaseManager.swift in Sources */,
 				ABFEE2142855F2C1007817D3 /* CommentTextField.swift in Sources */,
+				C0ED415A285868F1007E5502 /* Color.swift in Sources */,
 				C06CE1632851DD8500BBDA68 /* LoginView.swift in Sources */,
 				C0A779D32849E1C60086810C /* Model.xcdatamodeld in Sources */,
 				D40F41842857135D0037B3EB /* OnboardingViewModel.swift in Sources */,
