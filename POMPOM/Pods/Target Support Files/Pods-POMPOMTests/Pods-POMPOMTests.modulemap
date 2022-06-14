@@ -1,6 +1,0 @@
-framework module Pods_POMPOMTests {
-  umbrella header "Pods-POMPOMTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
