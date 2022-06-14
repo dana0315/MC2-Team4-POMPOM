@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ClothPickerView: View {
     @StateObject var viewModel = PickerViewModel()
-    
+    @State var currentCategory = ClothCategory.hat
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -24,6 +24,7 @@ struct ClothPickerView: View {
                     Spacer()
                 }
                 .padding(.leading, 20)
+                .padding(.top, 15)
                 
                 
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -43,19 +44,18 @@ struct ClothPickerView: View {
 
 struct CategoryGrid: View {
     @ObservedObject var viewModel: PickerViewModel
-    @State var cuurentCategory = ClothCategory.hat
     
     let rows = [GridItem(.fixed(44), spacing: 20)]
     var body: some View {
         LazyHGrid(rows: rows, spacing: 27) {
             ForEach(ClothCategory.allCases) { category in
-                Text(category.koreanSubtitle())
+                Text(category.koreanSubtitle)
                     .font(.body)
                     .fontWeight(.semibold)
-                    .foregroundColor(category == cuurentCategory ? Color(hex: "FF5100") : Color(hex: "A0A0A0"))
+                    .foregroundColor(category == viewModel.currentType ? Color(hex: "FF5100") : Color(hex: "A0A0A0"))
                     .onTapGesture {
                         // 맥락 바꾸기.
-                        cuurentCategory = category
+                        viewModel.changeCategory(with: category)
                         
                     }
             }
@@ -65,10 +65,11 @@ struct CategoryGrid: View {
 
 struct ColorGrid: View {
     @ObservedObject var viewModel: PickerViewModel
+    
     let rows = [GridItem(.fixed(44), spacing: 20)]
     var body: some View {
         LazyHGrid(rows: rows, spacing: 18) {
-            ForEach($viewModel.presets, id: \.self) { item in
+            ForEach($viewModel.currentPresets, id: \.self) { item in
                 ZStack {
                     Circle()
                         .fill(Color(hex: item.wrappedValue))
@@ -95,6 +96,7 @@ struct ColorGrid: View {
 
 struct ClothGrid: View {
     @ObservedObject var viewModel: PickerViewModel
+    
     let columns = [
         GridItem(.flexible(minimum: 60, maximum: 200), spacing: 20),
         GridItem(.flexible(minimum: 60, maximum: 200),spacing: 20)
@@ -106,7 +108,7 @@ struct ClothGrid: View {
                     .fill(Color.blue)
                     .frame(height: 160)
                     .onTapGesture {
-                        
+                        viewModel.selectCloth(item: Cloth(id: 0, name: "shirt", category: .top))
                     }
             }
         }

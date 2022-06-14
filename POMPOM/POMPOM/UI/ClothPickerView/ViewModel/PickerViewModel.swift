@@ -8,19 +8,50 @@
 import SwiftUI
 
 class PickerViewModel: ObservableObject {
-    @Published var presets: [String] = ["FFFFFF", "121212", "234212"]
+    //MARK: - Propeties
+    @Published var currentType: ClothCategory = .hat
+    @Published var currentPresets: [String] = []
     @Published var items: [Cloth] = {
         var result: [Cloth] = []
-        
         return result
     }()
     
+    @Published var selectedItems: [Cloth] = []
+
+    
+    // presets 이차원 배열 key : ClothCategory , value -> [String]
+    var presets: [ClothCategory : [String]] = [
+        .hat : ["FFFFFF", "000000", "325593", "2E614E", "AD5139", "DF002B"],
+        .top : ["FFFFFF", "000000", "BAD2F5", "C5C5C7", "23293F", "00914E", "3F2D24", "32323B", ""],
+        .layered : [],
+        .bottom : ["000000", "C5C5C7", "ACC8E0", "1D2433", "FAF3E6", "CBAF86", "6D7A3B"],
+        .socks : ["000000", "FFFFFF"],
+        .shoes : ["000000", "FFFFFF", "8D8983", "AC9F80"]
+    ]
+    
+    // current Item [Cloth]
+    
+    //MARK: - LifeCycle
+    init() {
+        changeCategory(with: .hat)
+    }
+    
+    //MARK: - Methods
     func addPreset(hex: String) {
-        if presets.contains(hex) {
+        if currentPresets.contains(hex) {
             print("DEBUG: 중복된 hexcode preset")
             return
         }
-        presets.append(hex)
+    }
+    
+    func selectCloth(item: Cloth) {
+        items.append(item)
+    }
+    
+    func changeCategory(with category: ClothCategory) {
+        currentType = category
+        currentPresets = presets[category]!
+        //옷 아이템도 변경해주기.
     }
 }
 
@@ -61,7 +92,7 @@ enum ClothCategory: CaseIterable, Identifiable {
     case socks
     case shoes
     
-    func koreanSubtitle() -> String {
+    var koreanSubtitle: String {
         switch self {
         case .hat:
             return "모자"
