@@ -39,6 +39,8 @@
 		C0A779DD2849E1C60086810C /* POMPOMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A779DC2849E1C60086810C /* POMPOMTests.swift */; };
 		C0A779E72849E1C60086810C /* POMPOMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A779E62849E1C60086810C /* POMPOMUITests.swift */; };
 		C0A779E92849E1C60086810C /* POMPOMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A779E82849E1C60086810C /* POMPOMUITestsLaunchTests.swift */; };
+		C0F1DC0028575BA700F8EAA0 /* ClothPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1DBFF28575BA700F8EAA0 /* ClothPickerView.swift */; };
+		C0F1DC0328575BCB00F8EAA0 /* PickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1DC0228575BCB00F8EAA0 /* PickerViewModel.swift */; };
 		C0F90CB32850729E00CC2C0E /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F90CB22850729E00CC2C0E /* Secret.swift */; };
 		CD5064FE72AD933795FF0668 /* Pods_POMPOM_POMPOMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A3C5F2FE47AEF89866EEFA6 /* Pods_POMPOM_POMPOMUITests.framework */; };
 		D40F41842857135D0037B3EB /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F41832857135D0037B3EB /* OnboardingViewModel.swift */; };
@@ -105,6 +107,8 @@
 		C0A779E22849E1C60086810C /* POMPOMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POMPOMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A779E62849E1C60086810C /* POMPOMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POMPOMUITests.swift; sourceTree = "<group>"; };
 		C0A779E82849E1C60086810C /* POMPOMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POMPOMUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C0F1DBFF28575BA700F8EAA0 /* ClothPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothPickerView.swift; sourceTree = "<group>"; };
+		C0F1DC0228575BCB00F8EAA0 /* PickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewModel.swift; sourceTree = "<group>"; };
 		C0F90CB22850729E00CC2C0E /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		C0FF3531284E9FB6001B1129 /* POMPOM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = POMPOM.entitlements; sourceTree = "<group>"; };
 		C350ECAB77A213FE32F7F534 /* Target Support Files/Pods-POMPOMTests/Pods-POMPOMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Target Support Files/Pods-POMPOMTests/Pods-POMPOMTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 		C04795C5284F15D20040646A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				C0F1DBFE28575B9100F8EAA0 /* ClothPickerView */,
 				AEA32AA7285741B5006A31D4 /* ChatView */,
 				C06CE1612851DD7700BBDA68 /* LoginView */,
 				C06CE15C2851DD1C00BBDA68 /* Onboarding */,
@@ -319,6 +324,23 @@
 				C0A779E82849E1C60086810C /* POMPOMUITestsLaunchTests.swift */,
 			);
 			path = POMPOMUITests;
+			sourceTree = "<group>";
+		};
+		C0F1DBFE28575B9100F8EAA0 /* ClothPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				C0F1DC0128575BB800F8EAA0 /* ViewModel */,
+				C0F1DBFF28575BA700F8EAA0 /* ClothPickerView.swift */,
+			);
+			path = ClothPickerView;
+			sourceTree = "<group>";
+		};
+		C0F1DC0128575BB800F8EAA0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C0F1DC0228575BCB00F8EAA0 /* PickerViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C0F90CB12850728F00CC2C0E /* Secrets */ = {
@@ -582,6 +604,7 @@
 				C0A779C72849E1C50086810C /* POMPOMApp.swift in Sources */,
 				C0F90CB32850729E00CC2C0E /* Secret.swift in Sources */,
 				C06CE1502851DC5C00BBDA68 /* CodeOutputView.swift in Sources */,
+				C0F1DC0328575BCB00F8EAA0 /* PickerViewModel.swift in Sources */,
 				C06CE14E2851DC5100BBDA68 /* CodeInputView.swift in Sources */,
 				ABFEE2122855A86D007817D3 /* CodeView.swift in Sources */,
 				C06CE1552851DCA100BBDA68 /* LoginManager.swift in Sources */,
@@ -598,6 +621,7 @@
 				D40F41842857135D0037B3EB /* OnboardingViewModel.swift in Sources */,
 				AEA32AAD285741DB006A31D4 /* MessageBubbleView.swift in Sources */,
 				C06CE1652851DDAB00BBDA68 /* LoginViewModel.swift in Sources */,
+				C0F1DC0028575BA700F8EAA0 /* ClothPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
