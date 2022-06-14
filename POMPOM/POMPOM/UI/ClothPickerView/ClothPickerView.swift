@@ -98,7 +98,9 @@ struct ColorGrid: View {
                         .frame(width: 44)
                         .shadow(radius: 5)
                         .onTapGesture {
-                            currentColor = Color(hex: item.wrappedValue)
+                            withAnimation {
+                                currentColor = Color(hex: item.wrappedValue)
+                            }
                         }
                 }
             }

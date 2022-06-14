@@ -14,15 +14,15 @@ struct Cloth: Identifiable {
 }
 
 enum ClothCategory: String, CaseIterable, Identifiable {
-    var id: ClothCategory {
-        self
-    }
-    
     case hat
     case top
     case bottom
     case socks
     case shoes
+    
+    var id: ClothCategory {
+        self
+    }
     
     var koreanSubtitle: String {
         switch self {
