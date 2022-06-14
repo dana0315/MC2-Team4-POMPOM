@@ -8,27 +8,34 @@
 import SwiftUI
 
 struct ClothPickerView: View {
-    @StateObject var viewModel = ViewModel()
- 
+    @StateObject var viewModel = PickerViewModel()
+    @State var currentCategory = ClothCategory.hat
+    @State var currentColor: Color = .white
+    
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack {
+                CategoryGrid(viewModel: viewModel)
+                    .frame(width: Constant.screenWidth)
+                
+                Seperator()
+                
                 HStack {
                     Text("내 옷장")
-                        .font(.custom("몰라", size: 15))
+                        .font(.custom("none", size: 15))
                     Spacer()
                 }
                 .padding(.leading, 20)
-                .padding(.bottom, 10)
+                .padding(.top, 15)
+                
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     ColorGrid(viewModel: viewModel)
-                    .padding(.leading, 20)
-                    .padding(.bottom, 20)
+                        .padding(.leading, 10)
+                        .padding(10)
+                    
                 }
-               Rectangle()
-                    .fill(.black.opacity(0.3))
-                    .frame(height: 0.75)
+                Seperator()
                     .padding(.bottom, 20)
                 ClothGrid(viewModel: viewModel)
                     .padding(.horizontal, 20)
@@ -37,25 +44,68 @@ struct ClothPickerView: View {
     }
 }
 
+struct CategoryGrid: View {
+    @ObservedObject var viewModel: PickerViewModel
+    @State var offSet: CGFloat = Constant.screenWidth / 2 - 60
+    
+    let rows = [GridItem(.fixed(44))]
+    var body: some View {
+        LazyHGrid(rows: rows, spacing: 40) {
+            ForEach(ClothCategory.allCases) { category in
+                Text(category.koreanSubtitle)
+                    .font(.body)
+                    .fontWeight(.semibold)
+                    .foregroundColor(category == viewModel.currentType ? Color(hex: "FF5100") : Color(hex: "A0A0A0"))
+                    .onTapGesture {
+                        // 맥락 바꾸기.
+                        viewModel.changeCategory(with: category)
+                        withAnimation(.spring()) {
+                            switch viewModel.currentType {
+                            case .hat:
+                                offSet = Constant.screenWidth / 2 - 60
+                            case .top:
+                                offSet = Constant.screenWidth / 2 - 120
+                            case .bottom:
+                                offSet = Constant.screenWidth / 2 - 190
+                            case .socks:
+                                offSet = Constant.screenWidth / 2 - 265
+                            case .shoes:
+                                offSet = Constant.screenWidth / 2 - 330
+                            }
+                        }
+                    }
+            }
+            .offset(x: offSet, y: 0)
+        }
+       
+    }
+}
+
 struct ColorGrid: View {
-    @ObservedObject var viewModel: ViewModel
+    @ObservedObject var viewModel: PickerViewModel
+    
     let rows = [GridItem(.fixed(44), spacing: 20)]
     var body: some View {
         LazyHGrid(rows: rows, spacing: 18) {
-            ForEach($viewModel.items) { item in
+            ForEach($viewModel.currentPresets, id: \.self) { item in
                 ZStack {
                     Circle()
-                        .fill(.blue)
+                        .fill(Color(hex: item.wrappedValue))
                         .frame(width: 44)
-                   
+                        .shadow(radius: 5)
                 }
             }
             Circle()
-                .fill(.pink)
+                .fill(Color(hex: "D8D8D8"))
                 .frame(width: 44)
+                .overlay(
+                    Image(systemName: "plus")
+                        .font(.title2)
+                        
+                )
                 .onTapGesture {
                     print("DEBUG : Button tapped")
-                    viewModel.addItem()
+                    viewModel.addPreset(hex: "23F323")
                 }
         }
     }
@@ -63,19 +113,20 @@ struct ColorGrid: View {
 
 
 struct ClothGrid: View {
-    @ObservedObject var viewModel: ViewModel
+    @ObservedObject var viewModel: PickerViewModel
+    
     let columns = [
-        GridItem(.flexible(minimum: 60, maximum: 200), spacing: 20),
-        GridItem(.flexible(minimum: 60, maximum: 200),spacing: 20)
+        GridItem(.flexible(minimum: 60), spacing: 20),
+        GridItem(.flexible(minimum: 60), spacing: 20)
     ]
     var body: some View {
         LazyVGrid(columns: columns, spacing: 20) {
-            ForEach(viewModel.items) { item in
+            ForEach(0..<12) { item in
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color.blue)
-                    .frame(height: 160)
+                    .aspectRatio(1, contentMode: .fit)
                     .onTapGesture {
-                        print(item.id)
+                        viewModel.selectCloth(item: Cloth(id: 0, name: "shirt", category: .top))
                     }
             }
         }
@@ -85,5 +136,13 @@ struct ClothGrid: View {
 struct ClothPickerView_Previews: PreviewProvider {
     static var previews: some View {
         ClothPickerView()
+    }
+}
+
+struct Seperator: View {
+    var body: some View {
+        Rectangle()
+            .fill(Color(hex: "D8D8D8"))
+            .frame(height: 0.75)
     }
 }
