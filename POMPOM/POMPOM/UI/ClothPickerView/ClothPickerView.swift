@@ -10,11 +10,13 @@ import SwiftUI
 struct ClothPickerView: View {
     @StateObject var viewModel = PickerViewModel()
     @State var currentCategory = ClothCategory.hat
+    @State var currentColor: Color = .white
     
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack {
                 CategoryGrid(viewModel: viewModel)
+                    .frame(width: Constant.screenWidth)
                 
                 Seperator()
                 
@@ -44,10 +46,11 @@ struct ClothPickerView: View {
 
 struct CategoryGrid: View {
     @ObservedObject var viewModel: PickerViewModel
+    @State var offSet: CGFloat = Constant.screenWidth / 2 - 60
     
-    let rows = [GridItem(.fixed(44), spacing: 20)]
+    let rows = [GridItem(.fixed(44))]
     var body: some View {
-        LazyHGrid(rows: rows, spacing: 27) {
+        LazyHGrid(rows: rows, spacing: 40) {
             ForEach(ClothCategory.allCases) { category in
                 Text(category.koreanSubtitle)
                     .font(.body)
@@ -56,10 +59,25 @@ struct CategoryGrid: View {
                     .onTapGesture {
                         // 맥락 바꾸기.
                         viewModel.changeCategory(with: category)
-                        
+                        withAnimation(.spring()) {
+                            switch viewModel.currentType {
+                            case .hat:
+                                offSet = Constant.screenWidth / 2 - 60
+                            case .top:
+                                offSet = Constant.screenWidth / 2 - 120
+                            case .bottom:
+                                offSet = Constant.screenWidth / 2 - 190
+                            case .socks:
+                                offSet = Constant.screenWidth / 2 - 265
+                            case .shoes:
+                                offSet = Constant.screenWidth / 2 - 330
+                            }
+                        }
                     }
             }
+            .offset(x: offSet, y: 0)
         }
+       
     }
 }
 
@@ -98,15 +116,15 @@ struct ClothGrid: View {
     @ObservedObject var viewModel: PickerViewModel
     
     let columns = [
-        GridItem(.flexible(minimum: 60, maximum: 200), spacing: 20),
-        GridItem(.flexible(minimum: 60, maximum: 200),spacing: 20)
+        GridItem(.flexible(minimum: 60), spacing: 20),
+        GridItem(.flexible(minimum: 60), spacing: 20)
     ]
     var body: some View {
         LazyVGrid(columns: columns, spacing: 20) {
             ForEach(0..<12) { item in
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color.blue)
-                    .frame(height: 160)
+                    .aspectRatio(1, contentMode: .fit)
                     .onTapGesture {
                         viewModel.selectCloth(item: Cloth(id: 0, name: "shirt", category: .top))
                     }

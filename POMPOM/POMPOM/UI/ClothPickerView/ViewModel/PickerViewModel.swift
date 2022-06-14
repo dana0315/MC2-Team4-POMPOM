@@ -11,6 +11,7 @@ class PickerViewModel: ObservableObject {
     //MARK: - Propeties
     @Published var currentType: ClothCategory = .hat
     @Published var currentPresets: [String] = []
+    @Published var currentItems: [Cloth] = []
     @Published var items: [Cloth] = {
         var result: [Cloth] = []
         return result
@@ -21,9 +22,8 @@ class PickerViewModel: ObservableObject {
     
     // presets 이차원 배열 key : ClothCategory , value -> [String]
     var presets: [ClothCategory : [String]] = [
-        .hat : ["FFFFFF", "000000", "325593", "2E614E", "AD5139", "DF002B"],
-        .top : ["FFFFFF", "000000", "BAD2F5", "C5C5C7", "23293F", "00914E", "3F2D24", "32323B", ""],
-        .layered : [],
+        .hat : ["000000", "FFFFFF", "325593", "2E614E", "AD5139", "DF002B"],
+        .top : ["000000", "FFFFFF", "BAD2F5", "C5C5C7", "23293F", "00914E", "3F2D24", "32323B", ""],
         .bottom : ["000000", "C5C5C7", "ACC8E0", "1D2433", "FAF3E6", "CBAF86", "6D7A3B"],
         .socks : ["000000", "FFFFFF"],
         .shoes : ["000000", "FFFFFF", "8D8983", "AC9F80"]
@@ -52,6 +52,11 @@ class PickerViewModel: ObservableObject {
         currentType = category
         currentPresets = presets[category]!
         //옷 아이템도 변경해주기.
+        currentItems = {
+            let clothes: [Cloth] = []
+            
+           return clothes
+        }()
     }
 }
 
@@ -87,7 +92,6 @@ enum ClothCategory: CaseIterable, Identifiable {
     
     case hat
     case top
-    case layered
     case bottom
     case socks
     case shoes
@@ -98,8 +102,6 @@ enum ClothCategory: CaseIterable, Identifiable {
             return "모자"
         case .top:
             return "상의"
-        case .layered:
-            return "레이어드"
         case .bottom:
             return "하의"
         case .socks:
