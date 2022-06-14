@@ -15,7 +15,7 @@ struct ClothPickerView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack {
-                CategoryGrid(viewModel: viewModel, currentColor: $currentColor)
+                CategoryGrid(viewModel: viewModel, currentColor: $currentColor, currentCategory: $currentCategory)
                     .frame(width: Constant.screenWidth)
                 
                 Seperator()
@@ -48,7 +48,7 @@ struct CategoryGrid: View {
     @ObservedObject var viewModel: PickerViewModel
     @State var offSet: CGFloat = Constant.screenWidth / 2 - 60
     @Binding var currentColor: Color
-    
+    @Binding var currentCategory: ClothCategory
     let rows = [GridItem(.fixed(44))]
     var body: some View {
         LazyHGrid(rows: rows, spacing: 40) {
@@ -74,6 +74,7 @@ struct CategoryGrid: View {
                                 offSet = Constant.screenWidth / 2 - 330
                             }
                         }
+                        currentCategory = category
                         currentColor = Color(hex: viewModel.currentPresets.first!)
                     }
             }
@@ -132,12 +133,12 @@ struct ClothGrid: View {
             ForEach($viewModel.currentItems, id: \.self) { item in
                
                
-                Image("c-\(currentCategory.englishSutitle)-\(item.wrappedValue)B")
+                Image("c-\(currentCategory)-\(item.wrappedValue)B")
                     .resizable()
                     .aspectRatio(1, contentMode: .fit)
                     .foregroundColor(currentColor)
                     .overlay {
-                        Image("c-\(currentCategory.englishSutitle)-\(item.wrappedValue)")
+                        Image("c-\(currentCategory)-\(item.wrappedValue)")
                             .resizable()
                             //검정색일 때 테두리 색 변경해주어야함.
                     }

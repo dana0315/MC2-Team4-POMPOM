@@ -8,12 +8,12 @@
 import Foundation
 
 struct Cloth: Identifiable {
-    var id: Int
-    var name: String
+    var id: String
+    var hex: String
     var category: ClothCategory
 }
 
-enum ClothCategory: CaseIterable, Identifiable {
+enum ClothCategory: String, CaseIterable, Identifiable {
     var id: ClothCategory {
         self
     }
@@ -36,21 +36,6 @@ enum ClothCategory: CaseIterable, Identifiable {
             return "양말"
         case .shoes:
             return "신발"
-        }
-    }
-    
-    var englishSutitle: String {
-        switch self {
-        case .hat:
-            return "hat"
-        case .top:
-            return "top"
-        case .bottom:
-            return "bottom"
-        case .socks:
-            return "socks"
-        case .shoes:
-            return "shoes"
         }
     }
 }

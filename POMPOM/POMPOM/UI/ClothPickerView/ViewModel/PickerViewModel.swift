@@ -26,8 +26,8 @@ class PickerViewModel: ObservableObject {
     
     var items: [ClothCategory: [String]] = [
         .hat : ["cap", "suncap"],
-        .top : ["long", "onepiece", "pkonepiece", "pkshirts", "shirts", "shirtslong", "short", "sleeveless"],
-        .bottom : ["long", "short", "skirt", "skirtlong"," skirtshort"],
+        .top : [ "short", "long",  "shirts", "shirtslong", "sleeveless", "pkshirts", "onepiece", "pkonepiece"],
+        .bottom : ["shorts", "skirtshort", "skirtsa", "long", "skirtlong", "bottom"],
         .socks : [],
         .shoes : ["sandals", "sneakers", "socks", "women"]
     ]
