@@ -38,4 +38,19 @@ enum ClothCategory: CaseIterable, Identifiable {
             return "신발"
         }
     }
+    
+    var englishSutitle: String {
+        switch self {
+        case .hat:
+            return "hat"
+        case .top:
+            return "top"
+        case .bottom:
+            return "bottom"
+        case .socks:
+            return "socks"
+        case .shoes:
+            return "shoes"
+        }
+    }
 }

@@ -15,7 +15,7 @@ struct ClothPickerView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack {
-                CategoryGrid(viewModel: viewModel)
+                CategoryGrid(viewModel: viewModel, currentColor: $currentColor)
                     .frame(width: Constant.screenWidth)
                 
                 Seperator()
@@ -30,14 +30,14 @@ struct ClothPickerView: View {
                 
                 
                 ScrollView(.horizontal, showsIndicators: false) {
-                    ColorGrid(viewModel: viewModel)
+                    ColorGrid(viewModel: viewModel, currentColor: $currentColor)
                         .padding(.leading, 10)
                         .padding(10)
                     
                 }
                 Seperator()
                     .padding(.bottom, 20)
-                ClothGrid(viewModel: viewModel)
+                ClothGrid(viewModel: viewModel, currentCategory: $currentCategory, currentColor: $currentColor)
                     .padding(.horizontal, 20)
             }
         }
@@ -47,6 +47,7 @@ struct ClothPickerView: View {
 struct CategoryGrid: View {
     @ObservedObject var viewModel: PickerViewModel
     @State var offSet: CGFloat = Constant.screenWidth / 2 - 60
+    @Binding var currentColor: Color
     
     let rows = [GridItem(.fixed(44))]
     var body: some View {
@@ -73,6 +74,7 @@ struct CategoryGrid: View {
                                 offSet = Constant.screenWidth / 2 - 330
                             }
                         }
+                        currentColor = Color(hex: viewModel.currentPresets.first!)
                     }
             }
             .offset(x: offSet, y: 0)
@@ -83,6 +85,7 @@ struct CategoryGrid: View {
 
 struct ColorGrid: View {
     @ObservedObject var viewModel: PickerViewModel
+    @Binding var currentColor: Color
     
     let rows = [GridItem(.fixed(44), spacing: 20)]
     var body: some View {
@@ -93,6 +96,9 @@ struct ColorGrid: View {
                         .fill(Color(hex: item.wrappedValue))
                         .frame(width: 44)
                         .shadow(radius: 5)
+                        .onTapGesture {
+                            currentColor = Color(hex: item.wrappedValue)
+                        }
                 }
             }
             Circle()
@@ -114,6 +120,8 @@ struct ColorGrid: View {
 
 struct ClothGrid: View {
     @ObservedObject var viewModel: PickerViewModel
+    @Binding var currentCategory: ClothCategory
+    @Binding var currentColor: Color
     
     let columns = [
         GridItem(.flexible(minimum: 60), spacing: 20),
@@ -121,12 +129,20 @@ struct ClothGrid: View {
     ]
     var body: some View {
         LazyVGrid(columns: columns, spacing: 20) {
-            ForEach(0..<12) { item in
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.blue)
+            ForEach($viewModel.currentItems, id: \.self) { item in
+               
+               
+                Image("c-\(currentCategory.englishSutitle)-\(item.wrappedValue)B")
+                    .resizable()
                     .aspectRatio(1, contentMode: .fit)
+                    .foregroundColor(currentColor)
+                    .overlay {
+                        Image("c-\(currentCategory.englishSutitle)-\(item.wrappedValue)")
+                            .resizable()
+                            //검정색일 때 테두리 색 변경해주어야함.
+                    }
                     .onTapGesture {
-                        viewModel.selectCloth(item: Cloth(id: 0, name: "shirt", category: .top))
+                        
                     }
             }
         }
