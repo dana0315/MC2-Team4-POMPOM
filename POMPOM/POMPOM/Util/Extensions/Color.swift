@@ -24,3 +24,4 @@ extension Color {
             blue: CGFloat(b) / 0xff
         )
     }
+}
