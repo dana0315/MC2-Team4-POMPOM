@@ -10,12 +10,12 @@ import SwiftUI
 struct ClothPickerView: View {
     @StateObject var viewModel = PickerViewModel()
     @State var currentCategory = ClothCategory.hat
-    @State var currentColor: Color = .white
+    @State var currentHex: String = "FFFFFF"
     
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack {
-                CategoryGrid(viewModel: viewModel, currentColor: $currentColor, currentCategory: $currentCategory)
+                CategoryGrid(viewModel: viewModel, currentHex: $currentHex, currentCategory: $currentCategory)
                     .frame(width: Constant.screenWidth)
                 
                 Seperator()
@@ -30,14 +30,14 @@ struct ClothPickerView: View {
                 
                 
                 ScrollView(.horizontal, showsIndicators: false) {
-                    ColorGrid(viewModel: viewModel, currentColor: $currentColor)
+                    ColorGrid(viewModel: viewModel, currentHex: $currentHex)
                         .padding(.leading, 10)
                         .padding(10)
                     
                 }
                 Seperator()
                     .padding(.bottom, 20)
-                ClothGrid(viewModel: viewModel, currentCategory: $currentCategory, currentColor: $currentColor)
+                ClothGrid(viewModel: viewModel, currentCategory: $currentCategory, currentHex: $currentHex)
                     .padding(.horizontal, 20)
             }
         }
@@ -47,7 +47,7 @@ struct ClothPickerView: View {
 struct CategoryGrid: View {
     @ObservedObject var viewModel: PickerViewModel
     @State var offSet: CGFloat = Constant.screenWidth / 2 - 60
-    @Binding var currentColor: Color
+    @Binding var currentHex: String
     @Binding var currentCategory: ClothCategory
     let rows = [GridItem(.fixed(44))]
     var body: some View {
@@ -75,7 +75,7 @@ struct CategoryGrid: View {
                             }
                         }
                         currentCategory = category
-                        currentColor = Color(hex: viewModel.currentPresets.first!)
+                        currentHex = viewModel.currentPresets.first!
                     }
             }
             .offset(x: offSet, y: 0)
@@ -86,7 +86,7 @@ struct CategoryGrid: View {
 
 struct ColorGrid: View {
     @ObservedObject var viewModel: PickerViewModel
-    @Binding var currentColor: Color
+    @Binding var currentHex: String
     
     let rows = [GridItem(.fixed(44), spacing: 20)]
     var body: some View {
@@ -99,9 +99,18 @@ struct ColorGrid: View {
                         .shadow(radius: 5)
                         .onTapGesture {
                             withAnimation {
-                                currentColor = Color(hex: item.wrappedValue)
+                                currentHex = item.wrappedValue
                             }
                         }
+                        .overlay {
+                            if item.wrappedValue == currentHex {
+                                Circle()
+                                    .stroke(Color(hex: "BABABA"), lineWidth: 3)
+                                    .frame(width: 60, height: 60, alignment: .center)
+                                    
+                            }
+                        }
+                        
                 }
             }
             Circle()
@@ -124,7 +133,7 @@ struct ColorGrid: View {
 struct ClothGrid: View {
     @ObservedObject var viewModel: PickerViewModel
     @Binding var currentCategory: ClothCategory
-    @Binding var currentColor: Color
+    @Binding var currentHex: String
     
     let columns = [
         GridItem(.flexible(minimum: 60), spacing: 20),
@@ -138,15 +147,18 @@ struct ClothGrid: View {
                 Image("c-\(currentCategory)-\(item.wrappedValue)B")
                     .resizable()
                     .aspectRatio(1, contentMode: .fit)
-                    .foregroundColor(currentColor)
+                    .foregroundColor(Color(hex: currentHex))
                     .overlay {
                         Image("c-\(currentCategory)-\(item.wrappedValue)")
                             .resizable()
+                            .foregroundColor(currentHex == "000000" ? .gray : .black)
+                            
                             //검정색일 때 테두리 색 변경해주어야함.
                     }
                     .onTapGesture {
                         
                     }
+                    
             }
         }
     }
