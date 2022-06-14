@@ -35,6 +35,7 @@
 		C0A779CE2849E1C60086810C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A779CD2849E1C60086810C /* Preview Assets.xcassets */; };
 		C0A779D32849E1C60086810C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0A779D12849E1C60086810C /* Model.xcdatamodeld */; };
 		C0ED415A285868F1007E5502 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ED4159285868F1007E5502 /* Color.swift */; };
+		C0ED415D28586989007E5502 /* Cloth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ED415C28586989007E5502 /* Cloth.swift */; };
 		C0F1DC0028575BA700F8EAA0 /* ClothPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1DBFF28575BA700F8EAA0 /* ClothPickerView.swift */; };
 		C0F1DC0328575BCB00F8EAA0 /* PickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1DC0228575BCB00F8EAA0 /* PickerViewModel.swift */; };
 		C0F90CB32850729E00CC2C0E /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F90CB22850729E00CC2C0E /* Secret.swift */; };
@@ -80,6 +81,7 @@
 		C0A779CD2849E1C60086810C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C0A779D22849E1C60086810C /* POMPOM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = POMPOM.xcdatamodel; sourceTree = "<group>"; };
 		C0ED4159285868F1007E5502 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		C0ED415C28586989007E5502 /* Cloth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloth.swift; sourceTree = "<group>"; };
 		C0F1DBFF28575BA700F8EAA0 /* ClothPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothPickerView.swift; sourceTree = "<group>"; };
 		C0F1DC0228575BCB00F8EAA0 /* PickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewModel.swift; sourceTree = "<group>"; };
 		C0F90CB22850729E00CC2C0E /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 		C0A779C52849E1C50086810C /* POMPOM */ = {
 			isa = PBXGroup;
 			children = (
+				C0ED415B2858697D007E5502 /* Models */,
 				C0ED4157285868D7007E5502 /* Util */,
 				C059279A2852FF8C0071751A /* Info.plist */,
 				C0F90CB12850728F00CC2C0E /* Secrets */,
@@ -276,6 +279,14 @@
 				C0ED4159285868F1007E5502 /* Color.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C0ED415B2858697D007E5502 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C0ED415C28586989007E5502 /* Cloth.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		C0F1DBFE28575B9100F8EAA0 /* ClothPickerView */ = {
@@ -426,6 +437,7 @@
 				C06CE15E2851DD4800BBDA68 /* OnboardingView.swift in Sources */,
 				AEA32AAB285741CF006A31D4 /* MessageListView.swift in Sources */,
 				C06CE14B2851DC0900BBDA68 /* CoupleView.swift in Sources */,
+				C0ED415D28586989007E5502 /* Cloth.swift in Sources */,
 				C0754BA7284F1921005DBAFC /* DummyNetworkManager.swift in Sources */,
 				AEA32AA9285741C5006A31D4 /* ChatView.swift in Sources */,
 				C06CE1592851DCD600BBDA68 /* CodeViewModel.swift in Sources */,
