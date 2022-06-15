@@ -110,7 +110,6 @@ struct ColorGrid: View {
                                     
                             }
                         }
-                        
                 }
             }
             Circle()
@@ -139,26 +138,32 @@ struct ClothGrid: View {
         GridItem(.flexible(minimum: 60), spacing: 20),
         GridItem(.flexible(minimum: 60), spacing: 20)
     ]
+    
     var body: some View {
         LazyVGrid(columns: columns, spacing: 20) {
             ForEach($viewModel.currentItems, id: \.self) { item in
-               
-               
-                Image("c-\(currentCategory)-\(item.wrappedValue)B")
+                Image(viewModel.imageName(name: item.wrappedValue) + "B")
                     .resizable()
                     .aspectRatio(1, contentMode: .fit)
                     .foregroundColor(Color(hex: currentHex))
                     .overlay {
-                        Image("c-\(currentCategory)-\(item.wrappedValue)")
+                        Image(viewModel.imageName(name: item.wrappedValue))
                             .resizable()
-                            .foregroundColor(currentHex == "000000" ? .gray : .black)
-                            
-                            //검정색일 때 테두리 색 변경해주어야함.
+                            .foregroundColor(currentHex == "000000" ? .gray : .black) // 검정색일 때 옷 테두리 색상 변경
                     }
                     .onTapGesture {
-                        
+                        withAnimation {
+                            viewModel.selectItem(name: item.wrappedValue)
+                        }
                     }
-                    
+                    .overlay {
+                        //옷 선택 애니메이션
+                        if viewModel.selectedItems[currentCategory] == item.wrappedValue {
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color(hex: "BABABA"), lineWidth: 4)
+                                .frame(width: 180, height: 180, alignment: .center)
+                        }
+                    }
             }
         }
     }

@@ -12,7 +12,7 @@ class PickerViewModel: ObservableObject {
     @Published var currentType: ClothCategory = .hat
     @Published var currentPresets: [String] = []
     @Published var currentItems: [String] = []
-    @Published var selectedItems: [Cloth] = []
+    @Published var selectedItems: [ClothCategory : String] = [:]
 
     
     // presets 이차원 배열 key : ClothCategory , value -> [String]
@@ -27,7 +27,7 @@ class PickerViewModel: ObservableObject {
     var items: [ClothCategory: [String]] = [
         .hat : ["cap", "suncap"],
         .top : [ "short", "long",  "shirts", "shirtslong", "sleeveless", "pkshirts", "onepiece", "pkonepiece"],
-        .bottom : ["shorts", "skirtshort", "skirtsa", "long", "skirtlong", "bottom"],
+        .bottom : ["shorts", "skirtshort", "skirtsa", "long", "skirtlong"],
         .socks : [],
         .shoes : ["sandals", "sneakers", "socks", "women"]
     ]
@@ -50,6 +50,20 @@ class PickerViewModel: ObservableObject {
         currentPresets = presets[category]!
         //옷 아이템도 변경해주기.
         currentItems = items[category]!
+    }
+    
+    func imageName(name: String) -> String {
+        let str = "c-\(currentType)-\(name)"
+        return str
+    }
+    
+    func selectItem(name: String) {
+        if selectedItems[currentType] == name {
+            selectedItems.removeValue(forKey: currentType)
+        } else {
+            selectedItems[currentType] = name
+        }
+        print(selectedItems)
     }
 }
 
