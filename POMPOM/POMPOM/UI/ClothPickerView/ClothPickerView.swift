@@ -11,6 +11,7 @@ struct ClothPickerView: View {
     @StateObject var vm = PickerViewModel()
     @State var currentCategory = ClothCategory.hat
     @State var currentHex: String = "FFFFFF"
+
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -30,6 +31,7 @@ struct ClothPickerView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     ColorGrid(vm: vm, currentHex: $currentHex)
+
                         .padding(.leading, 10)
                         .padding(10)
                     

@@ -23,7 +23,7 @@ enum ClothCategory: String, CaseIterable, Identifiable {
     var id: ClothCategory {
         self
     }
-    
+
     var koreanSubtitle: String {
         switch self {
         case .hat:
