@@ -48,41 +48,64 @@ struct CoupleView: View {
     @State private var commentInput = ""
     @State private var codeInputViewIsPresented = false
     @State private var codeOutputViewIsPresented = false
-    @State private var characterSize = CharacterSize.large
+    
+    @State private var sheetMode = SheetMode.none
+    
+    var characterSize: CharacterSize {
+        switch sheetMode {
+        case .none:
+            return .large
+        case .mid:
+            return .medium
+        case .high:
+            return .small
+        }
+    }
     
     var body: some View {
         NavigationView {
-            VStack {
-                HStack(spacing: characterSpacing) {
-                    if characterSize == .large {
-                        Button {
-                            actionSheetPresented = true
-                        } label: {
-                            ZStack {
-                                Image("Character")
-                                    .resizable()
-                                    .frame(width: characterWidth, height: characterHeight)
-                                    .opacity(partnerConnected ? 1 : 0.3)
-                                
-                                if !partnerConnected {
-                                    Text("초대하기")
-                                        .foregroundColor(.orange)
+            ZStack {
+                VStack {
+                    HStack(spacing: characterSpacing) {
+                        if characterSize == .large {
+                            Button {
+                                actionSheetPresented = true
+                            } label: {
+                                ZStack {
+                                    Image("Character")
+                                        .resizable()
+                                        .frame(width: characterWidth, height: characterHeight)
+                                        .opacity(partnerConnected ? 1 : 0.3)
+                                    
+                                    if !partnerConnected {
+                                        Text("초대하기")
+                                            .foregroundColor(.orange)
+                                    }
                                 }
                             }
+                            .disabled(partnerConnected)
                         }
-                        .disabled(partnerConnected)
-                    }
 
-                    Image("Character")
-                        .resizable()
-                        .frame(width: characterWidth, height: characterHeight)
+                        Button {
+                            sheetMode = .mid
+                        } label: {
+                            Image("Character")
+                                .resizable()
+                                .frame(width: characterWidth, height: characterHeight)
+                        }
+
+                    }
+                    .offset(y: characterOffset)
+                    .animation(.default, value: characterWidth)
+                    .animation(.default, value: characterHeight)
+                    .animation(.default, value: characterOffset)
+                    Spacer()
+                    CommentTextField(textInput: $commentInput)
                 }
-                .offset(y: characterOffset)
-                .animation(.default, value: characterWidth)
-                .animation(.default, value: characterHeight)
-                .animation(.default, value: characterOffset)
-                Spacer()
-                CommentTextField(textInput: $commentInput)
+                
+                SheetView(sheetMode: $sheetMode) {
+                    ClothPickerView()
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {
