@@ -42,47 +42,78 @@ struct CoupleView: View {
         characterWidth * (215.68 / 114)
     }
     
+    @StateObject var pickerViewModel = PickerViewModel()
     @State private var partnerConnected = false
     @State private var actionSheetPresented = false
     @State private var codeInput = ""
     @State private var commentInput = ""
     @State private var codeInputViewIsPresented = false
     @State private var codeOutputViewIsPresented = false
-    @State private var characterSize = CharacterSize.large
+    
+    @State private var sheetMode = SheetMode.none
+    
+    var characterSize: CharacterSize {
+        switch sheetMode {
+        case .none:
+            return .large
+        case .mid:
+            return .medium
+        case .high:
+            return .small
+        }
+    }
     
     var body: some View {
         NavigationView {
-            VStack {
-                HStack(spacing: characterSpacing) {
-                    if characterSize == .large {
-                        Button {
-                            actionSheetPresented = true
-                        } label: {
-                            ZStack {
-                                Image("Character")
-                                    .resizable()
-                                    .frame(width: characterWidth, height: characterHeight)
-                                    .opacity(partnerConnected ? 1 : 0.3)
-                                
-                                if !partnerConnected {
-                                    Text("초대하기")
-                                        .foregroundColor(.orange)
+            ZStack {
+                VStack {
+                    HStack(spacing: characterSpacing) {
+                        if characterSize == .large {
+                            Button {
+                                actionSheetPresented = true
+                            } label: {
+                                ZStack {
+                                    Image("Character")
+                                        .resizable()
+                                        .frame(width: characterWidth, height: characterHeight)
+                                        .opacity(partnerConnected ? 1 : 0.3)
+                                    
+                                    if !partnerConnected {
+                                        Text("초대하기")
+                                            .foregroundColor(.orange)
+                                    }
                                 }
                             }
+                            .disabled(partnerConnected)
                         }
-                        .disabled(partnerConnected)
-                    }
-
-                    Image("Character")
-                        .resizable()
+                        
+                        ZStack {
+                            Image("Character")
+                                .resizable()
+                            
+                            ClothView(vm: pickerViewModel, category: .hat)
+                            ClothView(vm: pickerViewModel, category: .shoes)
+                            ClothView(vm: pickerViewModel, category: .bottom)
+                            ClothView(vm: pickerViewModel, category: .top)
+                            
+                        }
                         .frame(width: characterWidth, height: characterHeight)
+                        .onTapGesture {
+                            sheetMode = .mid
+                        }
+
+                    }
+                    .offset(y: characterOffset)
+                    .animation(.default, value: characterWidth)
+                    .animation(.default, value: characterHeight)
+                    .animation(.default, value: characterOffset)
+                    Spacer()
+                    CommentTextField(textInput: $commentInput)
                 }
-                .offset(y: characterOffset)
-                .animation(.default, value: characterWidth)
-                .animation(.default, value: characterHeight)
-                .animation(.default, value: characterOffset)
-                Spacer()
-                CommentTextField(textInput: $commentInput)
+                
+                SheetView(sheetMode: $sheetMode) {
+                    ClothPickerView(vm: pickerViewModel)
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -119,10 +150,28 @@ struct CoupleView: View {
             }
         }
     }
+    
+
 }
 
 struct CoupleView_Previews: PreviewProvider {
     static var previews: some View {
         CoupleView()
+    }
+}
+
+struct ClothView: View {
+    @ObservedObject var vm: PickerViewModel
+    var category: ClothCategory
+    
+    var body: some View {
+        ZStack {
+            Image(vm.fetchImageString(with: category) + "B")
+                .resizable()
+                .foregroundColor(Color(hex: vm.selectedItems[category]?.hex ?? "FFFFFF"))
+            
+            Image(vm.fetchImageString(with: category))
+                .resizable()
+        }
     }
 }
