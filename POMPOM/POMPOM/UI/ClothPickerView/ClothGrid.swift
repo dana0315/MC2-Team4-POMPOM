@@ -24,14 +24,14 @@ struct ClothGrid: View {
                     Image(vm.imageName(name: item.wrappedValue) + "B")
                         .resizable()
                         .aspectRatio(1, contentMode: .fit)
-                        .foregroundColor(Color(hex: currentHex))
+                        .foregroundColor(Color(hex: vm.fetchCurrentHex() ?? currentHex))
                     
                     Image(vm.imageName(name: item.wrappedValue))
                         .resizable()
                         .aspectRatio(1, contentMode: .fit)
                         .foregroundColor(currentHex == "000000" ? .gray : .black) // 검정색일 때 옷 테두리 색상 변경
                         .overlay {
-                            if vm.selectedItems[currentCategory]?.id == item.wrappedValue {
+                            if vm.currentItem?.id == item.wrappedValue {
                                 RoundedRectangle(cornerRadius: 20)
                                     .stroke(Color(hex: "BABABA"), lineWidth: 4)
                                     .frame(width: 180, height: 180, alignment: .center)

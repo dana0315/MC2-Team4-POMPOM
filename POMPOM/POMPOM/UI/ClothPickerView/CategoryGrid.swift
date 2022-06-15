@@ -23,6 +23,9 @@ struct CategoryGrid: View {
                     .onTapGesture {
                         // 맥락 바꾸기.
                         vm.changeCategory(with: category)
+                        currentHex = vm.currentPresets.first!
+                        
+                        
                         withAnimation(.spring()) {
                             switch vm.currentType {
                             case .hat:
@@ -31,14 +34,15 @@ struct CategoryGrid: View {
                                 offSet = Constant.screenWidth / 2 - 120
                             case .bottom:
                                 offSet = Constant.screenWidth / 2 - 190
-                            case .socks:
-                                offSet = Constant.screenWidth / 2 - 265
                             case .shoes:
+                                offSet = Constant.screenWidth / 2 - 265
+                            case .accessories:
                                 offSet = Constant.screenWidth / 2 - 330
                             }
                         }
                         currentCategory = category
-                        currentHex = vm.currentPresets.first!
+                        
+                        
                     }
             }
             .offset(x: offSet, y: 0)
