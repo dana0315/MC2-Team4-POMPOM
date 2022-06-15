@@ -16,6 +16,10 @@
 		AEA32AA9285741C5006A31D4 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA32AA8285741C5006A31D4 /* ChatView.swift */; };
 		AEA32AAB285741CF006A31D4 /* MessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA32AAA285741CF006A31D4 /* MessageListView.swift */; };
 		AEA32AAD285741DB006A31D4 /* MessageBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA32AAC285741DB006A31D4 /* MessageBubbleView.swift */; };
+		C0182C3828598407000F0A6A /* ColorGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0182C3728598407000F0A6A /* ColorGrid.swift */; };
+		C0182C3A28598411000F0A6A /* CategoryGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0182C3928598411000F0A6A /* CategoryGrid.swift */; };
+		C0182C3C2859841A000F0A6A /* ClothGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0182C3B2859841A000F0A6A /* ClothGrid.swift */; };
+		C0182C4028598470000F0A6A /* Seperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0182C3F28598470000F0A6A /* Seperator.swift */; };
 		C04FCAF6284E24020040F790 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C04FCAF5284E24020040F790 /* GoogleService-Info.plist */; };
 		C06CE14B2851DC0900BBDA68 /* CoupleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE14A2851DC0900BBDA68 /* CoupleView.swift */; };
 		C06CE14E2851DC5100BBDA68 /* CodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CE14D2851DC5100BBDA68 /* CodeInputView.swift */; };
@@ -60,6 +64,10 @@
 		AEA32AAA285741CF006A31D4 /* MessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListView.swift; sourceTree = "<group>"; };
 		AEA32AAC285741DB006A31D4 /* MessageBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubbleView.swift; sourceTree = "<group>"; };
 		B4D6499D492346083126C119 /* Pods-POMPOM-POMPOMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POMPOM-POMPOMUITests.debug.xcconfig"; path = "Target Support Files/Pods-POMPOM-POMPOMUITests/Pods-POMPOM-POMPOMUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C0182C3728598407000F0A6A /* ColorGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGrid.swift; sourceTree = "<group>"; };
+		C0182C3928598411000F0A6A /* CategoryGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGrid.swift; sourceTree = "<group>"; };
+		C0182C3B2859841A000F0A6A /* ClothGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothGrid.swift; sourceTree = "<group>"; };
+		C0182C3F28598470000F0A6A /* Seperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seperator.swift; sourceTree = "<group>"; };
 		C04FCAF5284E24020040F790 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C059279A2852FF8C0071751A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C06CE14A2851DC0900BBDA68 /* CoupleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleView.swift; sourceTree = "<group>"; };
@@ -269,6 +277,7 @@
 			children = (
 				C0ED4158285868E4007E5502 /* Extensions */,
 				AB132FEB2854BF430023DBD0 /* Constants */,
+				C0182C3F28598470000F0A6A /* Seperator.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -294,6 +303,9 @@
 			children = (
 				C0F1DC0128575BB800F8EAA0 /* ViewModel */,
 				C0F1DBFF28575BA700F8EAA0 /* ClothPickerView.swift */,
+				C0182C3928598411000F0A6A /* CategoryGrid.swift */,
+				C0182C3728598407000F0A6A /* ColorGrid.swift */,
+				C0182C3B2859841A000F0A6A /* ClothGrid.swift */,
 			);
 			path = ClothPickerView;
 			sourceTree = "<group>";
@@ -431,6 +443,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0182C3C2859841A000F0A6A /* ClothGrid.swift in Sources */,
 				C0A779C92849E1C50086810C /* ContentView.swift in Sources */,
 				C06CE1532851DC7F00BBDA68 /* CoupleViewModel.swift in Sources */,
 				C0F90CB32850729E00CC2C0E /* Secret.swift in Sources */,
@@ -443,9 +456,11 @@
 				C06CE1592851DCD600BBDA68 /* CodeViewModel.swift in Sources */,
 				C0A779C72849E1C50086810C /* POMPOMApp.swift in Sources */,
 				C0F90CB32850729E00CC2C0E /* Secret.swift in Sources */,
+				C0182C3A28598411000F0A6A /* CategoryGrid.swift in Sources */,
 				C06CE1502851DC5C00BBDA68 /* CodeOutputView.swift in Sources */,
 				C0F1DC0328575BCB00F8EAA0 /* PickerViewModel.swift in Sources */,
 				C06CE14E2851DC5100BBDA68 /* CodeInputView.swift in Sources */,
+				C0182C3828598407000F0A6A /* ColorGrid.swift in Sources */,
 				ABFEE2122855A86D007817D3 /* CodeView.swift in Sources */,
 				C0754BA7284F1921005DBAFC /* DummyNetworkManager.swift in Sources */,
 				C06CE15B2851DCFE00BBDA68 /* ConnectionManager.swift in Sources */,
@@ -458,6 +473,7 @@
 				C0ED415A285868F1007E5502 /* Color.swift in Sources */,
 				C06CE1632851DD8500BBDA68 /* LoginView.swift in Sources */,
 				C0A779D32849E1C60086810C /* Model.xcdatamodeld in Sources */,
+				C0182C4028598470000F0A6A /* Seperator.swift in Sources */,
 				D40F41842857135D0037B3EB /* OnboardingViewModel.swift in Sources */,
 				AEA32AAD285741DB006A31D4 /* MessageBubbleView.swift in Sources */,
 				C06CE1652851DDAB00BBDA68 /* LoginViewModel.swift in Sources */,
