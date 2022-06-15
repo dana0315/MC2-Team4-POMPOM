@@ -8,6 +8,7 @@
 import SwiftUI
 
 extension Color {
+    //Hex 코드를 이용한 Color 객체 생성
     init(hex: String) {
         let scanner = Scanner(string: hex)
         scanner.currentIndex = hex.startIndex

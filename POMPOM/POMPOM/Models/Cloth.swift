@@ -8,22 +8,22 @@
 import Foundation
 
 struct Cloth: Identifiable {
-    var id: Int
-    var name: String
+    var id: String
+    var hex: String
     var category: ClothCategory
 }
 
-enum ClothCategory: CaseIterable, Identifiable {
-    var id: ClothCategory {
-        self
-    }
-    
+enum ClothCategory: String, CaseIterable, Identifiable {
     case hat
     case top
     case bottom
     case socks
     case shoes
     
+    var id: ClothCategory {
+        self
+    }
+
     var koreanSubtitle: String {
         switch self {
         case .hat:
