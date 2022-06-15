@@ -47,9 +47,3 @@ struct CategoryGrid: View {
     }
 }
 
-
-struct CategoryGrid_Previews: PreviewProvider {
-    static var previews: some View {
-        CategoryGrid()
-    }
-}

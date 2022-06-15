@@ -51,8 +51,3 @@ struct ColorGrid: View {
 }
 
 
-struct ColorGrid_Previews: PreviewProvider {
-    static var previews: some View {
-        ColorGrid()
-    }
-}

@@ -48,9 +48,3 @@ struct ClothGrid: View {
     }
 }
 
-
-struct ClothGrid_Previews: PreviewProvider {
-    static var previews: some View {
-        ClothGrid()
-    }
-}
