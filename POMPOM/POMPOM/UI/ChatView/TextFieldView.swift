@@ -13,7 +13,7 @@ struct TextFieldView: View {
     @State var comment: String = ""
     
     var body: some View {
-        HStack{
+        HStack {
             Image("TextFieldDecoration")
                 .resizable()
                 .frame(width: 46 ,height: 47)
@@ -26,7 +26,7 @@ struct TextFieldView: View {
     }
     
     func sendMessage() {
-        print("이거 만들어야댐")
+        //TODO: 눌렀을 때 메시지 서버에 올라가게 해야함
     }
     
 }

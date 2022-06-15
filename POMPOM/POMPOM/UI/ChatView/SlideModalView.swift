@@ -11,7 +11,7 @@ struct CardContent: View {
     @ObservedObject var keyboard : KeyboardObserver = KeyboardObserver()
     
     public var body: some View {
-        VStack{
+        VStack {
             SlideModalView {
                 MessageListView()
             }.background(Color.white.opacity(0.85))
@@ -60,12 +60,13 @@ struct CardView: ViewModifier {
     
     @State private var prevDragTranslation = CGSize.zero
     
-    var dragGesture: some Gesture{
+    var dragGesture: some Gesture {
         DragGesture(minimumDistance: 0, coordinateSpace: .global)
-            .onChanged{val in
+            .onChanged {val in
                 if !isDragging{
                     isDragging = true
                 }
+                
                 let dragAmount = val.translation.height - prevDragTranslation.height
                 if curHeight > maxHeight || curHeight < minHeight {
                     curHeight -= dragAmount / 6
@@ -74,9 +75,10 @@ struct CardView: ViewModifier {
                 }
                 
                 prevDragTranslation = val.translation
-            }.onEnded{val in
+            }.onEnded {val in
                 prevDragTranslation = .zero
                 isDragging = false
+                
                 if curHeight > maxHeight{
                     curHeight = maxHeight
                 }
@@ -89,7 +91,7 @@ struct CardView: ViewModifier {
 
 struct SlideModalView_Previews: PreviewProvider {
     static var previews: some View {
-        ZStack{
+        ZStack {
             CardContent()
         }
     }
