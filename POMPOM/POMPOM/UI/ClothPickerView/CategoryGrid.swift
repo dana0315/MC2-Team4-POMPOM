@@ -24,8 +24,6 @@ struct CategoryGrid: View {
                         // 맥락 바꾸기.
                         vm.changeCategory(with: category)
                         currentHex = vm.currentPresets.first!
-                        
-                        
                         withAnimation(.spring()) {
                             switch vm.currentType {
                             case .hat:
@@ -41,13 +39,10 @@ struct CategoryGrid: View {
                             }
                         }
                         currentCategory = category
-                        
-                        
                     }
             }
             .offset(x: offSet, y: 0)
         }
-       
     }
 }
 

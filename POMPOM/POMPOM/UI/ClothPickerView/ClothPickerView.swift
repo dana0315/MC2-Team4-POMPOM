@@ -23,7 +23,6 @@ struct ClothPickerView: View {
             ScrollView(showsIndicators: false) {
                 VStack {
                     
-                    
                     HStack {
                         Text("내 옷장")
                             .font(.custom("none", size: 15))
@@ -34,7 +33,6 @@ struct ClothPickerView: View {
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         ColorGrid(vm: vm, currentHex: $currentHex)
-
                             .padding(.leading, 10)
                             .padding(10)
                         

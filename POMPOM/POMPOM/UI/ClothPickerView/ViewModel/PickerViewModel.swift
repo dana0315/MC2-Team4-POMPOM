@@ -49,7 +49,6 @@ class PickerViewModel: ObservableObject {
     func changeCategory(with category: ClothCategory) {
         currentType = category
         currentPresets = presets[category]!
-        //옷 아이템도 변경해주기.
         currentItems = items[category]!
     }
     
@@ -70,8 +69,14 @@ class PickerViewModel: ObservableObject {
     }
     
     func selectItem(name: String, hex: String) {
-        if selectedItems[currentType]?.id == name {
-            selectedItems.removeValue(forKey: currentType)
+        if selectedItems[currentType] != nil {
+            if selectedItems[currentType]?.id == name {
+                selectedItems.removeValue(forKey: currentType)
+            } else {
+                //해당 key 에 해당하는 객체가 이미 존재하는 경우에는 새 객체를 생성하는 것이 아닌 값만 변경해준다.
+                selectedItems[currentType]?.hex = hex
+                selectedItems[currentType]?.id = name
+            }
         } else {
             selectedItems[currentType] = Cloth(id: name, hex: hex , category: currentType)
         }

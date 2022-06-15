@@ -92,8 +92,8 @@ struct CoupleView: View {
                                 .resizable()
                             
                             ClothView(vm: pickerViewModel, category: .hat)
-                            ClothView(vm: pickerViewModel, category: .bottom)
                             ClothView(vm: pickerViewModel, category: .shoes)
+                            ClothView(vm: pickerViewModel, category: .bottom)
                             ClothView(vm: pickerViewModel, category: .top)
                             
                         }
