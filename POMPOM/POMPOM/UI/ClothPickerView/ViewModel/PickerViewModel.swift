@@ -12,8 +12,7 @@ class PickerViewModel: ObservableObject {
     @Published var currentType: ClothCategory = .hat
     @Published var currentPresets: [String] = []
     @Published var currentItems: [String] = []
-    @Published var selectedItems: [ClothCategory : String] = [:]
-
+    @Published var selectedItems: [ClothCategory : Cloth] = [:]
     
     // presets 이차원 배열 key : ClothCategory , value -> [String]
     var presets: [ClothCategory : [String]] = [
@@ -38,13 +37,6 @@ class PickerViewModel: ObservableObject {
     }
     
     //MARK: - Methods
-    func addPreset(hex: String) {
-        if currentPresets.contains(hex) {
-            print("DEBUG: 중복된 hexcode preset")
-            return
-        }
-    }
-    
     func changeCategory(with category: ClothCategory) {
         currentType = category
         currentPresets = presets[category]!
@@ -52,18 +44,27 @@ class PickerViewModel: ObservableObject {
         currentItems = items[category]!
     }
     
+    func addPreset(hex: String) {
+        guard currentPresets.contains(hex) else { return }
+        presets[currentType]?.append(hex)
+    }
+    
     func imageName(name: String) -> String {
         let str = "c-\(currentType)-\(name)"
         return str
     }
     
-    func selectItem(name: String) {
-        if selectedItems[currentType] == name {
+    func selectItem(name: String, hex: String) {
+        if selectedItems[currentType]?.id == name {
             selectedItems.removeValue(forKey: currentType)
         } else {
-            selectedItems[currentType] = name
+            selectedItems[currentType] = Cloth(id: name, hex: hex , category: currentType)
         }
         print(selectedItems)
+    }
+    
+    func clearSelectedItem() {
+        selectedItems.removeAll()
     }
 }
 

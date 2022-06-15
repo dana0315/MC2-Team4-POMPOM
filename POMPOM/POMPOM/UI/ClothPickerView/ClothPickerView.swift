@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ClothPickerView: View {
-    @StateObject var viewModel = PickerViewModel()
+    @StateObject var vm = PickerViewModel()
     @State var currentCategory = ClothCategory.hat
     @State var currentHex: String = "FFFFFF"
     
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack {
-                CategoryGrid(viewModel: viewModel, currentHex: $currentHex, currentCategory: $currentCategory)
+                CategoryGrid(vm: vm, currentHex: $currentHex, currentCategory: $currentCategory)
                     .frame(width: Constant.screenWidth)
                 
                 Seperator()
@@ -30,14 +30,14 @@ struct ClothPickerView: View {
                 
                 
                 ScrollView(.horizontal, showsIndicators: false) {
-                    ColorGrid(viewModel: viewModel, currentHex: $currentHex)
+                    ColorGrid(vm: vm, currentHex: $currentHex)
                         .padding(.leading, 10)
                         .padding(10)
                     
                 }
                 Seperator()
                     .padding(.bottom, 20)
-                ClothGrid(viewModel: viewModel, currentCategory: $currentCategory, currentHex: $currentHex)
+                ClothGrid(vm: vm, currentCategory: $currentCategory, currentHex: $currentHex)
                     .padding(.horizontal, 20)
             }
         }
@@ -45,7 +45,7 @@ struct ClothPickerView: View {
 }
 
 struct CategoryGrid: View {
-    @ObservedObject var viewModel: PickerViewModel
+    @ObservedObject var vm: PickerViewModel
     @State var offSet: CGFloat = Constant.screenWidth / 2 - 60
     @Binding var currentHex: String
     @Binding var currentCategory: ClothCategory
@@ -56,12 +56,12 @@ struct CategoryGrid: View {
                 Text(category.koreanSubtitle)
                     .font(.body)
                     .fontWeight(.semibold)
-                    .foregroundColor(category == viewModel.currentType ? Color(hex: "FF5100") : Color(hex: "A0A0A0"))
+                    .foregroundColor(category == vm.currentType ? Color(hex: "FF5100") : Color(hex: "A0A0A0"))
                     .onTapGesture {
                         // 맥락 바꾸기.
-                        viewModel.changeCategory(with: category)
+                        vm.changeCategory(with: category)
                         withAnimation(.spring()) {
-                            switch viewModel.currentType {
+                            switch vm.currentType {
                             case .hat:
                                 offSet = Constant.screenWidth / 2 - 60
                             case .top:
@@ -75,7 +75,7 @@ struct CategoryGrid: View {
                             }
                         }
                         currentCategory = category
-                        currentHex = viewModel.currentPresets.first!
+                        currentHex = vm.currentPresets.first!
                     }
             }
             .offset(x: offSet, y: 0)
@@ -85,13 +85,13 @@ struct CategoryGrid: View {
 }
 
 struct ColorGrid: View {
-    @ObservedObject var viewModel: PickerViewModel
+    @ObservedObject var vm: PickerViewModel
     @Binding var currentHex: String
     
     let rows = [GridItem(.fixed(44), spacing: 20)]
     var body: some View {
         LazyHGrid(rows: rows, spacing: 18) {
-            ForEach($viewModel.currentPresets, id: \.self) { item in
+            ForEach($vm.currentPresets, id: \.self) { item in
                 ZStack {
                     Circle()
                         .fill(Color(hex: item.wrappedValue))
@@ -107,7 +107,6 @@ struct ColorGrid: View {
                                 Circle()
                                     .stroke(Color(hex: "BABABA"), lineWidth: 3)
                                     .frame(width: 60, height: 60, alignment: .center)
-                                    
                             }
                         }
                 }
@@ -122,7 +121,7 @@ struct ColorGrid: View {
                 )
                 .onTapGesture {
                     print("DEBUG : Button tapped")
-                    viewModel.addPreset(hex: "23F323")
+                    vm.addPreset(hex: "23F323")
                 }
         }
     }
@@ -130,7 +129,7 @@ struct ColorGrid: View {
 
 
 struct ClothGrid: View {
-    @ObservedObject var viewModel: PickerViewModel
+    @ObservedObject var vm: PickerViewModel
     @Binding var currentCategory: ClothCategory
     @Binding var currentHex: String
     
@@ -141,29 +140,30 @@ struct ClothGrid: View {
     
     var body: some View {
         LazyVGrid(columns: columns, spacing: 20) {
-            ForEach($viewModel.currentItems, id: \.self) { item in
-                Image(viewModel.imageName(name: item.wrappedValue) + "B")
-                    .resizable()
-                    .aspectRatio(1, contentMode: .fit)
-                    .foregroundColor(Color(hex: currentHex))
-                    .overlay {
-                        Image(viewModel.imageName(name: item.wrappedValue))
-                            .resizable()
-                            .foregroundColor(currentHex == "000000" ? .gray : .black) // 검정색일 때 옷 테두리 색상 변경
-                    }
-                    .onTapGesture {
-                        withAnimation {
-                            viewModel.selectItem(name: item.wrappedValue)
+            ForEach($vm.currentItems, id: \.self) { item in
+                ZStack {
+                    Image(vm.imageName(name: item.wrappedValue) + "B")
+                        .resizable()
+                        .aspectRatio(1, contentMode: .fit)
+                        .foregroundColor(Color(hex: currentHex))
+                    
+                    Image(vm.imageName(name: item.wrappedValue))
+                        .resizable()
+                        .aspectRatio(1, contentMode: .fit)
+                        .foregroundColor(currentHex == "000000" ? .gray : .black) // 검정색일 때 옷 테두리 색상 변경
+                        .overlay {
+                            if vm.selectedItems[currentCategory]?.id == item.wrappedValue {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(Color(hex: "BABABA"), lineWidth: 4)
+                                    .frame(width: 180, height: 180, alignment: .center)
+                            }
                         }
+                }
+                .onTapGesture {
+                    withAnimation {
+                        vm.selectItem(name: item.wrappedValue, hex: currentHex)
                     }
-                    .overlay {
-                        //옷 선택 애니메이션
-                        if viewModel.selectedItems[currentCategory] == item.wrappedValue {
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color(hex: "BABABA"), lineWidth: 4)
-                                .frame(width: 180, height: 180, alignment: .center)
-                        }
-                    }
+                }
             }
         }
     }
