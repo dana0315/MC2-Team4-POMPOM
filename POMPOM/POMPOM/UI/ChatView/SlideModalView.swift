@@ -63,7 +63,7 @@ struct CardView: ViewModifier {
     var dragGesture: some Gesture {
         DragGesture(minimumDistance: 0, coordinateSpace: .global)
             .onChanged {val in
-                if !isDragging{
+                if !isDragging {
                     isDragging = true
                 }
                 
@@ -75,11 +75,11 @@ struct CardView: ViewModifier {
                 }
                 
                 prevDragTranslation = val.translation
-            }.onEnded {val in
+            }.onEnded { val in
                 prevDragTranslation = .zero
                 isDragging = false
                 
-                if curHeight > maxHeight{
+                if curHeight > maxHeight {
                     curHeight = maxHeight
                 }
                 else if curHeight < minHeight {
