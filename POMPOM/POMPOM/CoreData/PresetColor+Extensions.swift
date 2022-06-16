@@ -20,7 +20,7 @@ extension PresetColor: BaseModel {
         }
     }
     
-    static func by(clothType: ClothCategory, hex: String) -> PresetColor? { // 같은 카테고리에 같은 색이 있는지 확인용
+    private static func by(clothType: ClothCategory, hex: String) -> PresetColor? { // 같은 카테고리에 같은 색이 있는지 확인용
         let request = PresetColor.fetchRequest()
         
         let hexPredicate = NSPredicate(format: "%K = %@", #keyPath(PresetColor.hex), hex)
