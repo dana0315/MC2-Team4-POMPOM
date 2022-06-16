@@ -9,13 +9,13 @@ import Foundation
 import FirebaseFirestore
 
 struct ClothesManager {
-    static let clothesRef = Firestore.firestore().collection("clothes")
+    let clothesRef = Firestore.firestore().collection("clothes")
     
-    static func saveClothes(userCode: String, clothes: [ClothCategory: Cloth]) {
+    func saveClothes(userCode: String, clothes: [ClothCategory: Cloth]) {
         clothesRef.document(userCode).setData(parseClothes(clothes: clothes))
     }
     
-    static func parseClothes(clothes: [ClothCategory: Cloth]) -> [String: Any] {
+    func parseClothes(clothes: [ClothCategory: Cloth]) -> [String: Any] {
         var returnValue: [String: Any] = [:]
         
         for clothCategory in ClothCategory.allCases {
@@ -29,7 +29,7 @@ struct ClothesManager {
         return returnValue
     }
     
-    static func loadClothes(userCode: String) async -> [ClothCategory: Cloth] {
+    func loadClothes(userCode: String) async -> [ClothCategory: Cloth] {
         var returnValue: [ClothCategory: Cloth] = [:]
         
         do {
