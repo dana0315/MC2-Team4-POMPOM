@@ -13,6 +13,7 @@
 		AB132FED2854BF500023DBD0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB132FEC2854BF500023DBD0 /* Constant.swift */; };
 		AB3ABBA8285AEB28002F9DD9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3ABBA7285AEB28002F9DD9 /* CoreDataManager.swift */; };
 		AB3ABBAA285AECCA002F9DD9 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3ABBA9285AECCA002F9DD9 /* BaseModel.swift */; };
+		AB3ABBAC285AF085002F9DD9 /* PresetColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3ABBAB285AF085002F9DD9 /* PresetColor+Extensions.swift */; };
 		ABC4C5192859A6FB00D064E4 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC4C5182859A6FB00D064E4 /* SheetView.swift */; };
 		ABFEE2122855A86D007817D3 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFEE2112855A86D007817D3 /* CodeView.swift */; };
 		ABFEE2142855F2C1007817D3 /* CommentTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFEE2132855F2C1007817D3 /* CommentTextField.swift */; };
@@ -66,6 +67,7 @@
 		AB132FEC2854BF500023DBD0 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		AB3ABBA7285AEB28002F9DD9 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		AB3ABBA9285AECCA002F9DD9 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		AB3ABBAB285AF085002F9DD9 /* PresetColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PresetColor+Extensions.swift"; sourceTree = "<group>"; };
 		ABC4C5182859A6FB00D064E4 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		ABFEE2112855A86D007817D3 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		ABFEE2132855F2C1007817D3 /* CommentTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTextField.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				AB3ABBA7285AEB28002F9DD9 /* CoreDataManager.swift */,
 				AB3ABBA9285AECCA002F9DD9 /* BaseModel.swift */,
+				AB3ABBAB285AF085002F9DD9 /* PresetColor+Extensions.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				C0A779C72849E1C50086810C /* POMPOMApp.swift in Sources */,
 				C0F90CB32850729E00CC2C0E /* Secret.swift in Sources */,
 				C0182C3A28598411000F0A6A /* CategoryGrid.swift in Sources */,
+				AB3ABBAC285AF085002F9DD9 /* PresetColor+Extensions.swift in Sources */,
 				C06CE1502851DC5C00BBDA68 /* CodeOutputView.swift in Sources */,
 				C0F1DC0328575BCB00F8EAA0 /* PickerViewModel.swift in Sources */,
 				C06CE14E2851DC5100BBDA68 /* CodeInputView.swift in Sources */,
